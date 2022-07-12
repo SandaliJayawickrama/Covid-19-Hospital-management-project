@@ -1,0 +1,79 @@
+
+
+<app-A_header></app-A_header>
+
+<body>
+
+<mat-card>
+  <mat-spinner *ngif="isLoading===true"></mat-spinner>
+  <h2>Enter Patient details </h2><br>
+<form ngNativeValidate (submit)="onSavePost(postForm)" #postForm="ngForm" *ngIf="isLoading===false"  >
+  <div >
+    <label >Full Name</label>
+    <input matInput required  id="fname" type="text"  class="form-control"name="fname" [ngModel]="post?.newName"   >
+  </div>
+  <div >
+    <label >Age</label>
+    <input matInput required  type="number"class="form-control-age" name="age"[ngModel]="post?.newAge"  >
+  </div>
+  <div >
+    <label  >Gender</label>
+    <select matInput class="form-select" name="gender" [ngModel]="post?.newGender" required  >
+
+      <option>Male</option>
+      <option>Female</option>
+    </select>
+  </div>
+  <div >
+    <label >Email</label>
+    <input matInput type="email" class="form-control"placeholder="abs@email.com"name="email"[ngModel]="post?.newEmail" required  >
+  </div>
+  <div >
+    <label >Contact no</label>
+    <input matInput type="number"class="form-control-1" name="contact"[ngModel]="post?.newContact"required>
+  </div>
+  <div >
+    <label >Address</label>
+    <input matInput type="text"  placeholder="1234 Main St" class="form-control" name="address" [ngModel]="post?.newAddress" required >
+  </div>
+  <div >
+    <label  >Province</label>
+    <select matInput class="form-select" name="province" [ngModel]="post?.newProvince" required  >
+      <option>Western</option>
+      <option>Southern</option>
+      <option>Northern</option>
+      <option>Eastern</option>
+      <option>Central</option>
+      <option>North Central</option>
+      <option>North Western</option>
+      <option>Sabaragamuwa</option>
+      <option>Uva</option>
+    </select>
+  </div>
+
+  <div >
+    <label >City</label>
+    <input matInput type="text" class="form-control-1" name="city" [ngModel]="post?.newCity" required  >
+
+  </div><br><br>
+
+
+
+  <div >
+    <button  type="submit" class="btn btn-primary">Submit</button>
+  </div>
+</form>
+</mat-card>
+
+
+</body>
+
+
+
+<br><br>
+
+
+
+<app-recently-visited></app-recently-visited>
+
+

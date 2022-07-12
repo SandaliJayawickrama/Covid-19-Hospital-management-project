@@ -1,0 +1,45 @@
+<button class="Navbutton" routerLink="/hospital-admin" routerLinkActive="active">Hospital home</button>
+
+
+<form>
+<div class="wrap">
+  <div class="search">
+     <input type="text" class="searchTerm" name="serachDoc" placeholder="Search doctor name" [(ngModel)]="searchText">
+     <button type="submit" class="searchButton">
+       <i class="fa fa-search"></i>
+    </button>
+  </div>
+</div>
+</form>
+
+<div class="topic">
+  <h2>Registered doctors in the site</h2>
+</div>
+
+<div class="vsched_table">
+
+  <table class="vacSched">
+    <tr>
+      <th> Doctor name</th>
+      <th> Phone</th>
+      <th> Address</th>
+      <th> Qualification</th>
+      <th> </th>
+    </tr>
+
+      <tr  *ngFor="let doctor of doctors | filter:searchText">
+        <td> {{doctor.drname}}</td>
+        <td>{{doctor.phone}} </td>
+        <td> {{doctor.address}}</td>
+        <td>{{doctor.quali}} </td>
+        <td> <button mat-raised-button class="button1 bttn" [routerLink]="['/doc-edit', doctor.id]" >Edit</button>
+             <button mat-raised-button class="button1 bttn" (click)="onDelete(doctor.id)">Delete</button> </td>
+      </tr>
+
+
+  </table>
+  </div>
+
+  <div *ngIf="doctors.length > 0" ></div>
+  <p *ngIf="doctors.length <= 0" >No schedules added yet</p>
+

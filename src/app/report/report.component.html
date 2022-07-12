@@ -1,0 +1,138 @@
+<app-A_header></app-A_header>
+<div class=divtable>
+<table class="table" id="province">
+  <thead>
+    <tr><th>
+      Total Number of Covid-19 Patients
+            </th>
+          <td>
+            {{total}}
+          </td></tr>
+          <br><br>
+    <tr>
+      <th scope="col">Area</th>
+      <th scope="col" >Patient count</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>Western Province</td>
+    <td>{{western}}</td>
+    </tr>
+    <tr>
+    <td>Southern Province</td>
+    <td>{{southern}}</td>
+    </tr>
+    <tr>
+    <td>Northern</td>
+    <td>{{northern}}</td>
+    </tr>
+    <tr>
+    <td>Eastern</td>
+    <td>{{eastern}}</td>
+    </tr>
+    <tr>
+    <td>Central</td>
+    <td>{{central}}</td>
+    </tr>
+    <tr>
+    <td>North-Central</td>
+    <td>{{northcentral}}</td>
+    </tr>
+    <tr>
+    <td>North-Western</td>
+    <td>{{northwestern}}</td>
+    </tr>
+    <tr>
+    <td>Sabaragamuwa</td>
+    <td>{{sabaragamuwa}}</td>
+    </tr>
+    <tr>
+    <td>Uva</td>
+    <td>{{uva}}</td>
+    </tr>
+
+  </tbody>
+</table>
+<button type="submit" class="btn btn-primary" (click)="download1()">Download As PDF</button>
+
+</div>
+
+<br><br><br><br><br>
+<div class=divtable>
+<table class="table" id="gender">
+  <thead>
+    <tr>
+      <th scope="col">Gender</th>
+      <th scope="col" >Patient count</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>Male</td>
+    <td>{{male}}</td>
+    </tr>
+    <tr>
+    <td>Female</td>
+    <td>{{female}}</td>
+    </tr>
+  </tbody>
+</table>
+<button type="submit" class="btn btn-primary" (click)="download2()">Download As PDF</button>
+
+</div>
+
+<br><br><br><br><br>
+<div class=divtable>
+<table class="table" id="age">
+  <thead>
+    <tr>
+      <th scope="col">#</th>
+      <th scope="col">Age Range</th>
+      <th scope="col" >Patient count</th>
+
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+    <td>Children </td>
+    <td>Age &#60; 18 </td>
+    <td>{{child}}</td>
+    </tr>
+    <tr>
+    <td>Adult</td>
+    <td>18&#60;Age &#60; 60</td>
+    <td>{{adult}}</td>
+    </tr>
+    <tr>
+    <td>Elder</td>
+    <td>Age &#62; 60</td>
+    <td>{{elder}}</td>
+    </tr>
+  </tbody>
+</table>
+<button type="submit" class="btn btn-primary" (click)="download3()">Download As PDF</button>
+
+</div>
+
+<br><br><br><br><br><br>
+<div class=divtable>
+<table class="table" id="places" >
+  <tbody>
+    <tr>
+<th>
+ <h1> Places Visited by Covid-19 Patients</h1>
+</th>
+    </tr>
+    <tr *ngFor="let post of Associates">
+      <td >
+{{post.recentPlaces}}
+      </td>
+    </tr>
+  </tbody>
+</table>
+<button type="submit" class="btn btn-primary" (click)="download4()">Download As PDF</button>
+
+</div>

@@ -1,0 +1,46 @@
+
+mat-card.content {
+
+  width:85%;
+  margin:auto;
+  margin-top:1rem;
+  height:500px;
+  background-color: lightslategrey;
+  background-image: url('../../../assets/images/Laboratory copy.jpg');
+  margin-bottom: 2rem;
+}
+
+button.content1{
+
+  margin-left:450px;
+  margin-top: 8rem;
+  width:300px;
+}
+button.content2{
+
+  margin-left:450px;
+  margin-top: 4rem;
+  width:300px;
+}
+button.content3{
+
+  margin-left:450px;
+  margin-top: 4rem;
+  width:300px;
+}
+button.content4{
+
+  margin-left:450px;
+  margin-top: 4rem;
+  width:300px;
+
+}
+
+
+
+.imageLab{
+
+  height:450px;
+  width:100%;
+
+}

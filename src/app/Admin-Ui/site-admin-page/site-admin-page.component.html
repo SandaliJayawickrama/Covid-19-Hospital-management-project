@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 6px;
+}
+h1{
+ text-align: center;
+}
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+</style>
+</head>
+<body>
+<h1>Admin List</h1>
+<table id="customers">
+  <tr>
+    <th>Name</th>
+    <th>Email</th>
+    <th>Phone</th>
+    <th>DOB</th>
+    <th>NIC</th>
+ 
+  </tr>
+
+  <tr *ngFor = "let user of userService.users ">
+    <td>{{user.fullname}}</td>
+    <td>{{user.email}}</td>
+    <td>{{user.phone}}</td>
+    <td>{{user.dob}}</td>
+    <td>{{user.nic}}</td>
+    
+  </tr>
+ 
+</table>
+
+  
+  
+
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,106 @@
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 2px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+.button {
+  background-color: #4CAF50;
+  border: none;
+  color: white;
+  padding: 10px 25px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  margin: 2px 1px;
+  cursor: pointer;
+}
+.alert-danger{
+  background-color: white;
+}
+.alert{
+  color: red;
+}
+/*Reservation tasks input box*/
+input[type=text]{
+  width:20%;
+  border:2px solid #aaa;
+  border-radius:4px;
+  margin:8px 0;
+  outline:none;
+  padding:8px;
+  box-sizing:border-box;
+  transition:.3s;
+}
+
+input[type=text]:focus{
+  border-color:green;
+  box-shadow:0 0 8px 0 green;
+}
+/*button css*/
+body {
+  background-color: #111111;
+  background-image: url('http://placekitten.com/1000/1000');
+}
+button.download {
+  transition: all .5s ease;
+  color: black;
+  border: 3px solid green;
+  font-family:'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-align:center;
+  line-height: 1;
+  font-size: 13px;
+  background-color : transparent;
+  padding: 10px;
+  outline: none;
+  border-radius: 4px;
+  width: 150px;
+  height: 40px;
+}
+button.download:hover {
+  color: #001F3F;
+  background-color: blue;
+}
+body {
+  background-color: #111111;
+  background-image: url('http://placekitten.com/1000/1000');
+}
+button.delete {
+  transition: all .5s ease;
+  color: black;
+  border: 3px solid green;
+  font-family:'Montserrat', sans-serif;
+  text-transform: uppercase;
+  text-align:center;
+  line-height: 1;
+  font-size: 13px;
+  background-color : transparent;
+  padding: 10px;
+  outline: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 35px;
+}
+button.delete:hover {
+  color: #001F3F;
+  background-color: red;
+}
+h1 { color: #04AA6D; font-family: 'Helvetica Neue', sans-serif; font-size: 20px; font-weight: bold; letter-spacing: -1px; line-height: 1; text-align: center; }

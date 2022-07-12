@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+  <body ng-app="">
+   <span style="font-size: larger;" >Admin Side Appointment Managment</span><br><br>
+   <button class="Navbutton" routerLink="/hospital-admin" routerLinkActive="active">Hospital home</button>
+    <div class="testbox">
+      <form #appointment="ngForm" (ngSubmit)="onBook(appointment)" >
+          <!--ID--><input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="appointmenService.selectedAppointment._id">
+
+               <div class="colums">
+                  <div class="item">
+        <!--Name--><label > Email<span>*</span></label>
+                    <input   type="text" name="name" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  #nname="ngModel" [(ngModel)]="appointmenService.selectedAppointment.name" required placeholder="Applicants Email"/>
+                    <div *ngIf ="nname.touched && nname.invalid" class="alert alert-danger">
+                      <div *ngIf="nname.errors?.required" class="alert alert-danger"><!--validation-->
+                        Email Required
+                      </div>
+                      <div *ngIf="nname.errors?.pattern" class="alert alert-danger">
+                          Email Invalid
+                      </div>
+                    </div>
+                  </div>
+                  <div class="item">
+            <!--cont--><label >National ID.No<span>*</span></label>
+                    <input  type="text" name="contact" [(ngModel)]="appointmenService.selectedAppointment.contact" #name="ngModel" placeholder="Applicants NationalID No." required/>
+                    <div *ngIf ="name.touched && name.invalid" class="alert alert-danger"><!--validation-->
+                      Required
+                    </div>
+                  </div>
+                  <div class="item">
+          <!--date--><label >Date<span>*</span></label>
+                    <input type="date" name="email" [(ngModel)]="appointmenService.selectedAppointment.email" #email="ngModel" required/>
+                    <div *ngIf ="email.touched && email.invalid" class="alert alert-danger"><!--validation-->
+                      Required
+                    </div>
+                  </div>
+          <!--Docname--><div class="item">
+                  <p style="color: brown;">*</p>
+                    <label >Select Doctor<span></span></label><br>
+                  <select name="docname" [(ngModel)]="appointmenService.selectedAppointment.docname" #name="ngModel"required >
+                    <option value="default">-----------------</option>
+                   <option *ngFor="let Drschedule of DAschedule" [value]="Drschedule.drname">
+                    <td> {{Drschedule.drname}}</td>
+                    </option>
+                  </select>
+
+                </div>
+                <div class="btn-block">
+                  <button type="submit" [disabled]="!appointment.valid " >Reserve</button><br><br>
+                  <button type="button" class="hero-btn red-btn" (click)="resetForm(appointment)">Reset</button>
+
+                </div>
+                </div>
+      </form>
+    </div>
+
+    <div class="info">
+      <input type="text" name="aid" #aid placeholder="Enter Appointmen ID">
+    <button  class="delete"  type="button" (click)="onDelete(aid.value)" >Cancel Appointment</button>
+
+      <br><br><input class="search-field skills" #date name="search" type="text" placeholder="Search Patient Details" [(ngModel)]="searchText">
+      <button  class="download"  (click)="downloaddetails()">Download Appointment Report</button><span>**</span>
+      <button  class="delete"  type="button" (click)="onDatedel(date.value)" >Cancel apointments of above date</button>
+
+
+      <table id="customers">
+        <thead>
+          <th>ID</th>
+          <th>Name</th>
+          <th>Doctor Name</th>
+          <th>National ID</th>
+          <th>Email</th>
+          <th></th>
+        </thead>
+        <tr *ngFor="let Ares of appointmenService.appointment| filter:searchText">
+          <td>{{Ares._id}}</td>
+          <td>{{Ares.name}}</td>
+          <td>{{Ares.docname}}</td>
+          <td>{{Ares.contact}}</td>
+          <td>{{Ares.email}}</td>
+
+          <td>
+            <a  class="button" (click)="onEdit(Ares)">Update</a>
+            <a  class="button" (click)="onDelid(Ares._id)">Delete</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </body>

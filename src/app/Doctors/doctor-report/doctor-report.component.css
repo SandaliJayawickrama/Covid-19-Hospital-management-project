@@ -1,0 +1,131 @@
+.vacSched {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 90%;
+}
+
+.vacSched td, .vacSched th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.vacSched tr:nth-child(even){background-color: #f2f2f2;}
+
+.vacSched th {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-align: left;
+  background-color: #425185;
+  color: white;
+}
+
+.vsched_table{
+  padding-top: 40px;
+  padding-bottom: 150px;
+  padding-left: 5%;
+
+}
+
+.button1 {
+  background-color:#257de2;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 6px 2px;
+  cursor: pointer;
+}
+
+.bttn:hover{
+	background-color:#76b1f5;
+  color: black;
+}
+
+.topic{
+  padding-top: 50px;
+  text-align: center;
+}
+
+.dwnldBtn{
+  padding-left: 45%;
+  padding-right: 35%;
+  padding-bottom: 20px;
+}
+
+h1{
+  text-align: center;
+  text-transform: uppercase;
+  color: #2a0757;
+  padding-top: 50px;
+  text-decoration: underline;
+  font-weight: bold
+}
+
+
+
+
+/*search*/
+
+
+
+.search {
+  width: 100%;
+  position: relative;
+  display: flex;
+}
+
+.searchTerm {
+  width: 100%;
+  border: 3px solid #00B4CC;
+  border-right: none;
+  padding: 5px;
+  height: 20px;
+  border-radius: 5px 0 0 5px;
+  outline: none;
+  color: #9DBFAF;
+}
+
+.searchTerm:focus{
+  color: #0c0d0e;
+}
+
+.searchButton {
+  width: 40px;
+  height: 36px;
+  border: 1px solid #00B4CC;
+  background: #00B4CC;
+  text-align: center;
+  color: #fff;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 20px;
+}
+
+/*Resize the wrap to see the search bar change!*/
+.wrap{
+  width: 30%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+
+/*navigation Btn*/
+.Navbutton {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #008CBA;
+  width: 100%;
+}

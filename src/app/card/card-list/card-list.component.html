@@ -1,0 +1,28 @@
+<form>
+  <div class="form-group">
+    <input type="text" name="searchText" placeholder="search" [(ngModel)]="searchText">
+    </div>
+ </form>
+
+<mat-card>
+<mat-spinner *ngIf="isLoading===true"></mat-spinner>
+<ng-container *ngIf="isLoading===false">
+<mat-accordion multi="true" *ngIf="posts.length>0 ">
+   <mat-expansion-panel *ngFor="let posts of posts |filter:searchText">
+      <mat-expansion-panel-header>
+        {{posts.paymentID}}
+        </mat-expansion-panel-header>
+        <p>{{posts.number}}</p>
+        <p>{{posts.name}}</p>
+        <p>{{posts.edate}}</p>
+        <p>{{posts.cvc}}</p>
+        <p>{{posts.date}}</p>
+        <mat-action-row>
+           <button mat-button color="accent" [routerLink]="['/cardedit',posts.id]">EDIT</button>
+           <button mat-button color="warn" (click)="cardDelete(posts.id)">DELETE</button>
+        </mat-action-row>
+    </mat-expansion-panel>
+</mat-accordion>
+<p class="info-text" *ngIf="posts.length<=0 && !isLoading">No post added yet!</p>
+</ng-container>
+</mat-card>

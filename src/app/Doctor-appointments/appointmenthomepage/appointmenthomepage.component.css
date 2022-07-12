@@ -1,0 +1,273 @@
+.searchpharmacy{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+
+ }
+
+ .listpharmacy{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+ }
+
+ h1{
+   text-align: center;
+   color: #777;
+   margin-bottom: 20px;
+   font-size: 30px;
+   letter-spacing: 2px;
+ }
+
+ table{
+
+    width: 100%;
+
+
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(32, 32, 32, 0.3);
+ }
+
+ th{
+   background: #1848a1ab;
+   padding: 10px 15px;
+ }
+
+ td{
+   padding-top: 30px;
+   padding-bottom: 30px;
+
+ }
+
+ tr:nth-child(odd){
+   background-color: rgba(243, 243, 243, 0.527);
+   font-family: 'Times New Roman', Times, serif;
+ }
+ tr:nth-child(even){
+  background-color: rgba(243, 243, 243, 0.466);
+  font-family: 'Times New Roman', Times, serif;
+  font-style: inherit;
+}
+
+ span{
+   color: rgb(47, 47, 156);
+   font-size: 50px;
+   width: auto;
+   font-family: 'Times New Roman', Times, serif;
+
+ }
+
+ .search-field{
+   height: 30px;
+
+   padding: 10px;
+   margin-right: 5px;
+ }
+
+ .skills{
+    width: 800px;
+    border-color:#012952 ;
+    border-radius: 10px;
+ }
+
+ .search-btn{
+   height: 50px;
+   width: 150px;
+   background: #001F3F;
+   border: none;
+   color: #fff;
+ }
+
+ .hero-btn1{
+  height: 40px;
+  width: 100%;
+  background: #012952;
+  border: none;
+  color: #fff;
+  font-size: 13px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.hero-btn1:hover{
+  background: #011b33;
+  cursor: pointer;
+}
+
+
+ .search-btn:hover{
+
+  background: #cbf0d4;
+  cursor: pointer;
+}
+
+.form-box{
+  background: white(195, 255, 183);
+  padding: 30px 50px;
+  box-shadow: 0 10px 15px rgba(32, 32, 32, 0.3);
+}
+@media(max-width: 700px){
+  th{
+    font-size: 10px;
+    background: #ba68c8;
+    padding: 10px 15px;
+  }
+
+  td{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 10px;
+
+  }
+
+  .hero-btn1{
+    height: 20px;
+    width: 50px;
+    background: #17a13a;
+    border: none;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  table{
+
+    width: 80%;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(32, 32, 32, 0.3);
+ }
+
+  .skills{
+    width: 250px;
+
+ }
+
+ .search-field{
+  height: 15px;
+  padding: 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+
+}
+
+
+.search-btn{
+  height: 30px;
+  width: 100px;
+  background: #012952;
+  border: none;
+  color: #fff;
+}
+
+h1{
+  text-align: center;
+  color: #777;
+  margin-bottom: 20px;
+  font-size: 30px;
+  letter-spacing: 1px;
+}
+
+}
+
+
+.listpharmacy{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+
+
+}
+
+.col-md-3{
+  flex-basis: 31%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+  margin-right: 20px;
+  cursor: pointer;
+
+}
+
+
+.col-md-3 img{
+  width: 100%;
+  border-radius: 10px;
+  height: 350px;
+
+
+}
+.row1{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.row2{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.container h2{
+  background: #012952;
+  color: #fff;
+  width: 200px;
+  font-size: 13px;
+  padding: 5px;
+  height: 28px;
+  margin-top: 30px;
+}
+
+.container h2::after{
+  content: '';
+  border-top: 39px solid #012952;
+  border-right: 40px solid transparent;
+  position: relative;
+  left: 48px;
+  top: 34px;
+}
+
+button.view {
+  transition: all 0.1s ease;
+  color: black;
+  border: 2px solid blue;
+  font-family:'Montserrat', sans-serif;
+
+  text-align:center;
+  line-height: 1;
+  font-size: 13px;
+  background-color : transparent;
+  padding: 10px;
+  outline: none;
+  border-radius: 4px;
+  width: 200px;
+  height: 35px;
+}
+button.view:hover {
+  color: #001F3F;
+  background-color: rgba(6, 8, 122, 0.377);
+}
+/*body home*/
+body {
+  background-color:white;
+  background-repeat: no-repeat;
+  background-size :cover;
+  background-image: url('../../../assets/Images/619985.jpg')
+
+}
+

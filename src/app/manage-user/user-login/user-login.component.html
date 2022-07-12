@@ -1,0 +1,34 @@
+<style>
+  body{
+    background-image: url(/assets/Images/log.jpg);
+  }
+</style>
+
+<body>
+
+
+
+<div class="center">
+    <h2>Site Admin Login</h2>
+
+    <form (submit)="onLogin(loginForm)" #loginForm="ngForm" *ngIf="!isLoading">
+      <div class="txt_field">
+        <input type="email" name="email" ngModel #emailInput="ngModel" email required>
+        <span *ngIf="emailInput.invalid">enter valid email </span>
+        <label>Email</label>
+      </div>
+      <div class="txt_field">
+        <input type="password" name="password" ngModel #passwordInput="ngModel" password required>
+        <span *ngIf="passwordInput.invalid">please enter password</span>
+        <label>Password</label>
+      </div>
+
+      
+      <input type="submit" value="Login">
+    
+    </form>
+  </div>
+
+
+</body>
+

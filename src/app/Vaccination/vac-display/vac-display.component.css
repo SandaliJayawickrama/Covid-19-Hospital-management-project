@@ -1,0 +1,162 @@
+.vacSched {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.vacSched td, .vacSched th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+.vacSched tr:nth-child(even){background-color: #f2f2f2;}
+
+/*.vacSched tr:hover {background-color: #ddd;}*/
+
+.vacSched th {
+  padding-top: 10px;
+  padding-bottom: 5px;
+  text-align: left;
+  background-color: #425185;
+  color: white;
+}
+
+.vsched_table{
+  padding-top: 40px;
+  padding-bottom: 150px;
+}
+
+.button1 {
+  background-color:#257de2;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 6px 10px;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+.bttn:hover{
+	background-color:#76b1f5;
+  color: black;
+}
+
+.topic{
+  padding-top: 50px;
+}
+
+.abc{
+  padding-top: 2%;
+}
+
+
+
+/*SearchBar*/
+
+.main-search-input {
+  background: rgb(109, 180, 228);
+  padding: 0 120px 0 0;
+  border-radius: 1px;
+
+}
+
+.fl-wrap {
+  float: left;
+  width: 100%;
+  position: relative
+}
+
+/*.main-search-input:before {
+  content: '';
+  position: absolute;
+  bottom: -40px;
+  width: 50px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.41);
+  left: 50%;
+  margin-left: -25px
+}*/
+
+
+.main-search-input-item {
+  float: left;
+  width: 100%;
+  box-sizing: border-box;
+  border-right: 1px solid rgb(176, 128, 255);
+  height: 50px;
+  position: relative
+}
+
+.main-search-input-item input:first-child {
+  border-radius: 100%
+}
+
+.main-search-input-item input {
+  float: left;
+  border: none;
+  width: 100%;
+  height: 50px;
+  padding-left: 20px
+}
+
+.main-search-button {
+  background: #8067f0
+}
+
+.main-search-button {
+  position: absolute;
+  right: 0px;
+  height: 50px;
+  width: 120px;
+  color: rgb(22, 19, 19);
+  top: 0;
+  border: none;
+  border-top-right-radius: 0px;
+  border-bottom-right-radius: 0px;
+  cursor: pointer
+}
+
+.main-search-input-wrap {
+  max-width: 500px;
+  margin: 20px auto;
+  position: relative
+}
+
+:focus {
+  outline: 0
+}
+
+@media only screen and (max-width: 768px) {
+  .main-search-input {
+      background: rgba(255, 255, 255, 0.2);
+      padding: 14px 20px 10px;
+      box-shadow: 0px 0px 0px 10px rgba(255, 255, 255, 0.0)
+  }
+
+
+  .main-search-button {
+      position: relative;
+      float: left;
+      width: 100%;
+      border-radius: 6px
+  }
+}
+
+
+/*navigation Btn*/
+.Navbutton {
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  background-color: #008CBA;
+  width: 100%;
+}

@@ -1,0 +1,74 @@
+
+
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Covid-19 Panademic</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+
+
+
+
+  </head>
+    <body>
+      <button type="button" class="view" routerLink="/viewvaccinereservation" routerLinkActive="active">View/Cancell reservations</button>
+
+       <section class="searchpharmacy">
+
+
+
+               <form>
+                 <h1> <span> Vaccination</span><span></span></h1>
+                 <div class="form-box">
+                  <button type="button" routerLink="/vaccineres" routerLinkActive="active" class="hero-btn1 red-btn">make reservation</button>
+                  <br><br><input class="search-field skills" name="search" type="text" placeholder="Search city" [(ngModel)]="searchText">
+                </div>
+
+               </form>
+
+
+
+
+
+       <div class="listpharmacy">
+
+        <table class="container" >
+
+          <tr >
+            <th> Center name</th>
+            <th>Center Address</th>
+            <th>Center ID</th>
+            <th> </th>
+          </tr>
+
+          <tr  *ngFor="let Vacschedule of Vschedule |filter:searchText">
+              <td> {{Vacschedule.centerN}}</td>
+              <td> {{Vacschedule.centerA}}</td>
+              <td> {{Vacschedule.vschedname}}</td>
+
+
+
+            </tr>
+
+
+
+        </table>
+        </div>
+        <br><br>
+        </section>
+        </body>
+
+
+ <br>
+
+
+
+
+
+
+

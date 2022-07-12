@@ -1,0 +1,33 @@
+
+mat-card.content {
+
+  width:85%;
+  margin:auto;
+  margin-top:1rem;
+  background-color: lightslategrey;
+  margin-bottom: 2rem;
+
+}
+
+mat-card.contentSub {
+
+
+
+  margin-bottom:1rem;
+
+}
+
+mat-spinner{
+  margin:auto;
+}
+
+
+.search{
+  width:80%;
+  height: 30px;
+  margin-bottom: 1rem;
+  border-radius: 15px;
+  border-color: black;
+  margin-left: 14%;
+
+}

@@ -1,0 +1,66 @@
+<section class="slider">
+<div class="banner1">
+  <img class="img1" src="/assets/Images/slide1.jpg"  alt="">
+  <div class="text-box">
+    <h1>Weight Management & Slimming</h1>
+    <span></span>
+    <p>Enhance your metabolism, maintain a healthy appetite and minimize cravings with our effective weight management and slimming products
+    </p>
+  </div>
+  </div>
+  <div class="banner2">
+    <img class="img1" src="/assets/Images/slide11.jpg" alt="">
+    <div class="text-box">
+      <h1>Medicines</h1>
+      <span></span>
+      <p>Helping you save more on medication
+      </p>
+    </div>
+    </div>
+    <div class="banner3">
+      <img class="img1" src="/assets/Images/slide22.jpeg" alt="">
+      <div class="text-box">
+        <h1>Precision medicine made simple for you</h1>
+        <span></span>
+        <p>We transalte genetic result into actionable reports and clinical decision and recommendations so that you can give better care, faster.
+        </p>
+      </div>
+      </div>
+      <div class="banner4">
+        <img class="img1" src="/assets/Images/slide33.jpg" alt="">
+        <div class="text-box">
+          <h1>Sports Supplements</h1>
+          <span></span>
+          <p>Maximize your workout and provide your body with the neccessary protien and amino acids it needs.
+          </p>
+        </div>
+        </div>
+
+      </section>
+
+
+
+<section class="pres1">
+  <div class="pres">
+  <h3>UPLOAD PRESCRIPTION</h3>
+  </div>
+
+<div class="formpres">
+  <form>
+    <img [src]="imageUrl" style="width: 650px;height: 450px;border-radius: 20px;margin-top: 40px;" class="imgupload">
+    <div>
+      <input type="file" name="image" (change)="handleFileInput($event)" (change)="selectImage($event)" #Image accept="image/*"  #filePicker />
+    </div>
+    <div>
+      <button type="submit" class="hero-btn red-btn" (click)="filePicker.click()">Select Image</button>
+    </div>
+    <br>
+    <div>
+      <button type="submit" class="btn2" (click)="onSubmit()">Upload</button>
+    </div>
+  </form>
+</div>
+
+
+
+</section>

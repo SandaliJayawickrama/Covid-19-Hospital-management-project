@@ -1,0 +1,92 @@
+<div class="row">
+  <div class="col s12">
+    <div class="card">
+      <div class="card-content white-text">
+        <div class="row">
+          <div class="col s5">
+            <form ngNativeValidate #reservationForm="ngForm" (ngSubmit)="onSubmit(reservationForm)">
+              <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="reservationService.selectedReservation._id">
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="nic" #name="ngModel" [(ngModel)]="reservationService.selectedReservation.nic" placeholder="Enter NIC" required>
+                  <label>NIC :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="name" #name="ngModel" [(ngModel)]="reservationService.selectedReservation.name" placeholder="Enter Full Name" required>
+                  <label>Name :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="city" #name="ngModel" [(ngModel)]="reservationService.selectedReservation.city" placeholder="Enter City" required>
+                  <label>City :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="country" #name="ngModel" [(ngModel)]="reservationService.selectedReservation.country" placeholder="Enter Country" required>
+                  <label>Country returning from :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+              <div class="row">
+                <div class="input-field col s12">
+                  <input type="text" name="resno" #name="ngModel" [(ngModel)]="reservationService.selectedReservation.resno" placeholder="Enter Rest Room Number" required>
+                  <label>ResNo :
+                    <label class="red-text">*</label>
+                  </label>
+                </div>
+              </div>
+
+              <div class="row">
+                <div class="input-field col s12">
+                  <button class="btn btn-custom right" type="button" (click)="resetForm(reservationForm)">Reset</button>
+                  <button class="btn btn-custom right" type="submit" >Submit</button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col s7">
+              <table class="responsive-table highlight">
+                  <thead>
+                    <tr>
+                      <th>NIC</th>
+                      <th>Name</th>
+                      <th>City</th>
+                      <th>Country</th>
+                      <th>Res No</th>
+                      <th></th>
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let res1 of reservationService.Reservations">
+                    <td>{{res1.nic}}</td>
+                    <td>{{res1.name}}</td>
+                    <td>{{res1.city}}</td>
+                    <td>{{res1.country}}</td>
+                    <td>{{res1.resno}}</td>
+                    <td>
+                        <a class="action-btn" (click)="onEdit(res1)">
+                          <i class="material-icons">edit</i>
+                        </a>
+                        <a class="action-btn" (click)="onDelete(res1._id,reservationForm)">
+                          <i class="material-icons">delete</i>
+                        </a>
+                      </td>
+                  </tr>
+                </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>

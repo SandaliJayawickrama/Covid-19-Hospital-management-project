@@ -1,0 +1,262 @@
+#toast-container {
+  top: auto !important;
+  right: auto !important;
+  bottom: 10%;
+  left: 7%;
+}
+
+/*body{
+  background-image: linear-gradient(to right, #ff5722, #ff9800);
+  margin-top: 20px !important;
+}*/
+
+.register-left{
+  text-align: center;
+  color: #D18700;
+  padding: 30px;
+  margin-top: 280px;
+
+
+
+}
+
+.register-left h3 span{
+  color: #f44336;
+}
+
+.register-left p{
+  padding: 20px 20px 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.register-left img{
+  margin-top: 60px;
+  margin-bottom: 18px;
+  width: 80px;
+  animation: mover 1s infinite alternate;
+}
+
+.button{
+  margin-left: 20px;
+  display: inline-flex;
+  height: 50px;
+  padding: 0;
+  background: #009578;
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  overflow: hidden;
+  font-family: 'Quicksand', sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.button:hover{
+  background: #008168;
+}
+
+.button:active{
+  background: #006e58;
+}
+
+.button__text,
+.button__icon {
+  display: inline-flex;
+  align-items: center;
+  padding: 0 24px;
+  color: #fff;
+  height: 100%;
+  font-size: 12px;
+
+
+}
+
+.button__icon img{
+  font-size: 1.5em;
+  background: rgba(0, 0, 0, 0.08);
+  animation: mover2 1s infinite alternate;
+  width: 50px;
+  height: 55px;
+  margin-top: 10px;
+  padding: auto;
+}
+
+
+@keyframes mover2{
+  0%,
+  25% {
+    transform: translateX(0%);
+    left: 0%;
+  }
+  75%,
+  100% {
+    transform: translateX(-20%);
+    left: 100%;
+  }
+}
+
+
+input.ng-invalid{
+  border-left: 5px solid red;
+}
+input.ng-valid{
+  border-left: 5px solid green;
+}
+
+
+
+
+@keyframes mover{
+  0%{
+    transform: translateY(0);
+  }
+  100%{
+    transform: translateY(-20px);
+  }
+}
+
+.register-right{
+  border: 1px;
+   box-shadow: 10px 5px #0000;
+  background: #fff;
+  border-top-left-radius: 10% 50%;
+  border-bottom-left-radius: 10% 50%;
+  border-bottom-right-radius: 10px;
+  border-top-right-radius: 10px;
+  padding: 5%;
+
+
+
+}
+
+.register-right h1{
+  text-align: center;
+  margin-bottom: 10px;
+  position: relative;
+	padding: 0 0 10px;
+	margin-bottom: 10px;
+  margin-top: 5px;
+  font-size: 35px;
+
+}
+
+.register-right h1{
+
+
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+
+  border-radius: 10px;
+  background-color: #2ecc71;
+}
+.register-form{
+  padding: 5px;
+
+}
+
+
+
+.register-right .btn-primary{
+
+
+  border-radius: 1.5rem;
+  border: none;
+  width: 220px;
+  background: #ff9800;
+  font-weight: 600;
+  color: #fff;
+  margin-top: 20px;
+  padding: 10px;
+  margin-right: 10px;
+}
+.register-right .btn-primary:hover{
+  background: #ff5722;
+}
+
+
+.orderform{
+
+ width: 80%;
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 50px;
+
+  background-image: linear-gradient(to right, #e4e4e42c, #D3D3D3);
+  margin: auto;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(32, 32, 32, 1.5);
+
+
+}
+
+
+
+
+/*.orderform input, .orderform textarea{
+      width: 100%;
+      padding: 15px;
+      margin-bottom: 0px;
+      outline: none;
+      border: 1px solid #ccc;
+}*/
+
+.form-control{
+  width: 100%;
+	border: 2px solid rgba(0, 0, 0, 0);
+ outline: none;
+
+	padding: 0.5rem 1rem;
+	font-size: 1.1rem;
+	margin-bottom: 22px;
+	transition: .3s;
+}
+
+mat-form-field{
+  width: 100%;
+
+}
+
+input.ng-invalid{
+  border-left: 5px solid red;
+}
+input.ng-valid{
+  border-left: 5px solid green;
+}
+
+
+.hero-btn{
+  height: 50px;
+  width: 250px;
+  background: #f44336;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 10px;
+}
+@media(max-width: 700px){
+  .orderform input, .orderform textarea{
+    width: 80%;
+  }
+
+  .hero-btn{
+    height: 30px;
+    width: 100px;
+    background: #f44336;
+    border: none;
+    color: #fff;
+    font-size: 13px;
+    cursor: pointer;
+    border-radius: 10px;
+  }
+  h1{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 18PX;
+    color: tomato;
+
+  }
+}

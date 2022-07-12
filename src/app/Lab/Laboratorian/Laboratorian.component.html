@@ -1,0 +1,94 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-card  class="content"  *ngIf="!isLoading">
+  <mat-card-title class="title"><b>Appoinments</b></mat-card-title><hr>
+  <mat-card class="contentSub" *ngFor="let b of bookingDetails" >
+  <form [formGroup]="form" (submit)="onUpdateBooking(b.progress, b.bookId, b.labName, b.labId, b.bookDate, b.result, b.NIC, b.email)">
+    <h1>
+     <b> Laboratory:{{b.labName}}</b><mat-icon color="primary"> local_hospital</mat-icon>
+    </h1><hr>
+
+    <h3>
+      Date:{{b.bookDate}}
+
+    </h3>
+    <h3>
+      Progress:{{b.progress}}
+
+    </h3>
+    <h3>
+      Result:{{b.result}}
+
+    </h3>
+    <h3>
+      NIC:{{b.NIC}}
+
+    </h3>
+
+    <div>
+      <mat-radio-group aria-label="Select an option" >
+        <h3>
+          Select the progress:
+        </h3>
+        <mat-radio-button class="progress"
+         #progressNotAdded
+         (click)="updateProgress(progressNotAdded.value, b.bookId, b.labName, b.labId, b.bookDate, b.result, b.NIC)"
+         value="Not Added">Not Added</mat-radio-button>
+
+        <mat-radio-button class="progress"
+        #progressTesting
+         value="Testing"
+        (click)="updateProgress(progressTesting.value, b.bookId, b.labName, b.labId, b.bookDate, b.result, b.NIC)">Testing</mat-radio-button>
+
+        <mat-radio-button
+        class="progress"
+        #progressSuccessful
+        (click)="updateProgress(progressSuccessful.value, b.bookId, b.labName, b.labId, b.bookDate, b.result, b.NIC)"
+        value="Successful">Successful</mat-radio-button>
+      </mat-radio-group>
+   </div><br>
+   <mat-radio-group aria-label="Select the status">
+    <h3>
+      Select the status of the result:
+    </h3>
+    <mat-radio-button
+    #resultNotAdded
+    (click)="updateProgress(b.progress, b.bookId, b.labName, b.labId, b.bookDate, resultNotAdded.value, b.NIC)"
+    class="progress"
+     value="Not Added">Not Added</mat-radio-button>
+
+    <mat-radio-button
+     class="progress"
+     #resultPositive
+    (click)="updateProgress(b.progress, b.bookId, b.labName, b.labId, b.bookDate, resultPositive.value, b.NIC)"
+     value="Positive">Positive</mat-radio-button>
+
+    <mat-radio-button
+    class="progress"
+    #resultNegative
+    (click)="updateProgress(b.progress, b.bookId, b.labName, b.labId, b.bookDate, resultNegative.value, b.NIC)"
+    value="Negative">Negative</mat-radio-button>
+  </mat-radio-group>
+  <div>
+    <button mat-stroked-button type="button" (click)="filePicker.click()">Pick PCR Report</button>
+    <input type="file" #filePicker (change)="onImagePicked($event)">
+  </div>
+  <div *ngIf="imagePreview!=='' && imagePreview && form.get('image')?.valid">
+    <b>Image added</b>
+  </div>
+  <mat-error *ngIf="form.get('image')?.invalid">Please insert the PCR report, Only Image Formats allowed</mat-error>
+
+  <br>
+  <div>
+  <button
+  mat-raised-button
+  color="accent"
+  type="submit">Submit PCR report</button>
+  <button
+  mat-raised-button
+  color="accent"
+  (click)="onDelete(b.bookId)">Delete</button>
+</div>
+</form>
+  </mat-card>
+  <p class="info-text mat-body-1" *ngIf="bookingDetails.length <= 0">No bookings added yet!</p>
+</mat-card>

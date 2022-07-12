@@ -1,0 +1,70 @@
+<h1>Cash works</h1>
+
+
+ <mat-card>
+   <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onSavePost(cashForm)" #cashForm="ngForm" *ngIf="!isLoading">
+
+
+    <mat-form-field>
+   <label for="paymentID">PaymentID</label>
+   <input
+   type="text"
+   name="cpaymentID"
+   id="cpaymentID"
+   matInput
+   [ngModel]="cash?.paymentID"
+   required
+   #paymentID="ngModel">
+   <mat-error *ngIf="paymentID.invalid">Please enter the ID</mat-error>
+  </mat-form-field>
+
+
+  <br>
+
+
+
+  <br>
+    <mat-form-field>
+    <label for="name">Name</label>
+    <input type="text" name="cname" id="cname"  matInput [ngModel]="cash?.name">
+    </mat-form-field>
+
+
+  <br>
+
+  <mat-form-field>
+    <label for="bname">BankName</label>
+    <input type="text" name="cbankName" matInput [ngModel]="cash?.BankName">
+    </mat-form-field>
+
+  <br>
+  <mat-form-field>
+    <label for="branch">Branch</label>
+    <input type="text" name="cbranch" id="cbranch"  matInput [ngModel]="cash?.branch">
+    </mat-form-field>
+  <br>
+  <mat-form-field>
+    <label for="cemail">Email</label>
+    <input  type="text" name="cemail" id="cemail" matInput [ngModel]="cash?.email" requied>
+    </mat-form-field>
+
+  <br>
+  <mat-form-field>
+    <label for="date">Date</label>
+    <input type="date" name="cdate" id="cdate"  matInput [ngModel]="cash?.date">
+    </mat-form-field>
+
+<br>
+<br>
+<button
+mat-raised-button
+color="primary"
+type="submit">Confirm Payment</button>
+</form>
+</mat-card>
+<br>
+<button routerLink="/clist">VIEW DETAILS</button>
+<button routerLink="/paymentReport">VIEW REPORT</button>
+
+

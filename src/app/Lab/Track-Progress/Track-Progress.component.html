@@ -1,0 +1,33 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>
+<mat-card class="content" *ngIf="!isLoading">
+  <input class="search" type="Search" matInput #search placeholder="Search the NIC">
+  <button mat-icon-button color="primary" aria-label="Example icon button with a menu icon">
+    <mat-icon>search</mat-icon>
+  </button>
+  <mat-card class="contentSub" *ngFor="let b of bookingDetails">
+    <h1>
+      Laboratory:{{b.labName}}
+    </h1><hr>
+
+    <h3>
+      Date:{{b.bookDate}}
+
+    </h3>
+    <h3>
+      Progress:{{b.progress}}
+
+    </h3>
+    <h3>
+      Result:{{b.result}}
+
+    </h3>
+    <h3>
+      NIC:{{b.NIC}}
+
+    </h3>
+    <!-- <div class="post-image">
+      <img [src]="b.imagePath" [alt]="b.NIC">
+    </div> -->
+    <p class="info-text mat-body-1" *ngIf="bookingDetails.length <= 0">No bookings added yet!</p>
+  </mat-card>
+</mat-card>

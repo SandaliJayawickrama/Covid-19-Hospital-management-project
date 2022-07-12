@@ -1,0 +1,320 @@
+
+
+
+ .searchpharmacy{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+
+ }
+
+ .listpharmacy{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+
+ }
+
+ h1{
+   text-align: center;
+   color: #777;
+   margin-bottom: 20px;
+   font-size: 45px;
+   letter-spacing: 2px;
+ }
+
+ table{
+
+    width: 100%;
+
+
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(32, 32, 32, 0.3);
+ }
+
+ th{
+   background: #6882c8;
+   padding: 10px 15px;
+ }
+
+ td{
+   padding-top: 30px;
+   padding-bottom: 30px;
+
+ }
+
+ tr:nth-child(odd){
+   background-color: #eeeeee;
+ }
+
+ span{
+   color: #f44336;
+   font-weight: bold;
+ }
+
+ .search-field{
+   height: 30px;
+
+   padding: 10px;
+   margin-right: 5px;
+ }
+
+ .skills{
+    width: 800px;
+    border-color: #434a50;
+    border-radius: 10px;
+ }
+
+ .search-btn{
+   height: 50px;
+   width: 150px;
+   background: #f44336;
+   border: none;
+   color: #fff;
+ }
+
+ .hero-btn1{
+  height: 40px;
+  width: 100px;
+  background: #f44336;
+  border: none;
+  color: #fff;
+  font-size: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+
+
+ .search-btn:hover{
+
+  background: #bb0d00;
+  cursor: pointer;
+}
+
+
+#content{
+  height: 100px;
+  width: 100%;
+  border-radius: 5px;
+  position: relative;
+  overflow: hidden;
+}
+
+
+
+.form-box{
+ /* background: #F0FFFF;
+  padding: 30px 50px;
+  box-shadow: 0 2px 5px rgba(32, 32, 32, 0.7);
+  border-radius: 10px;*/
+   background: rgb(0, 0, 0, 0.5);
+   padding: 20px;
+   border-radius: 5px;
+
+
+}
+
+.search-field{
+  width: 80%;
+  padding: 15px 20px;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  font-weight: bold;
+  color: #161e39;
+  transition: 3s;
+
+}
+
+.search-field:focus{
+color: black;
+}
+
+#content::before{
+  content: "";
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: #0058ff;
+  transform: rotate(45deg);
+  top: -300px;
+  left: -570px;
+  transition: 3s;
+  z-index: -2;
+}
+
+#content:focus-within::before{
+  left: -100px;
+}
+
+
+
+@media(max-width: 700px){
+  th{
+    font-size: 10px;
+    background: #ba68c8;
+    padding: 10px 15px;
+  }
+
+  td{
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: 10px;
+
+  }
+
+  .hero-btn1{
+    height: 20px;
+    width: 50px;
+    background: #f44336;
+    border: none;
+    color: #fff;
+    font-size: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-right: 10px;
+  }
+
+  table{
+
+    width: 80%;
+    text-align: center;
+    border-collapse: collapse;
+    border-spacing: 0;
+    border-radius: 12px 12px 0 0;
+    overflow: hidden;
+    box-shadow: 0 2px 5px rgba(32, 32, 32, 0.3);
+ }
+
+  .skills{
+    width: 250px;
+
+ }
+
+ .search-field{
+  height: 15px;
+
+  padding: 10px;
+  margin-right: 5px;
+  margin-bottom: 10px;
+
+}
+
+
+.search-btn{
+  height: 30px;
+  width: 100px;
+  background: #f44336;
+  border: none;
+  color: #fff;
+}
+
+h1{
+  text-align: center;
+  color: #777;
+  margin-bottom: 20px;
+  font-size: 20px;
+  letter-spacing: 1px;
+}
+
+}
+
+
+.listpharmacy{
+  width: 80%;
+  margin: auto;
+  text-align: center;
+  padding-top: 10px;
+
+
+}
+
+.col-md-3{
+  flex-basis: 31%;
+  border-radius: 10px;
+  margin-bottom: 5%;
+  text-align: left;
+  margin-right: 20px;
+  cursor: pointer;
+
+}
+
+
+.col-md-3 img{
+  width: 100%;
+  border-radius: 10px;
+  height: 350px;
+
+
+}
+.row1{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.row2{
+  margin-top: 5%;
+  display: flex;
+  justify-content: space-between;
+}
+
+
+
+.container h2{
+  background: #0062cc;
+  color: #fff;
+  width: 200px;
+  font-size: 13px;
+  padding: 5px;
+  height: 28px;
+  margin-top: 30px;
+}
+
+.container h2::after{
+  content: '';
+  border-top: 39px solid #0062cc;
+  border-right: 40px solid transparent;
+  position: relative;
+  left: 32px;
+  top: 26px;
+}
+
+.product-bottom h3{
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  color: #777;
+}
+
+.product-bottom button{
+  height: 25px;
+  width: 100px;
+  background: #f44336;
+  border: none;
+  color: #fff;
+  text-align: center;
+  align-content: center;
+  cursor: pointer;
+}
+
+.product-bottom button:hover{
+
+  background: red;
+
+  cursor: pointer;
+  transition: 0.5s;
+}
+.alert-danger{
+  background-color: #bb0d00;
+}
+.alert{
+  color: white;
+}

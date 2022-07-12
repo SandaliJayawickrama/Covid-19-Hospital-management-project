@@ -1,0 +1,92 @@
+<style>
+  body{
+    background-image: url(/assets/Images/remotely.jpg);
+  }
+
+  #error {
+    color: red;
+  }
+</style>
+
+
+
+
+
+
+
+<body>
+
+<div class="container">
+    <div class="title">User Registration</div>
+    <div class="content">
+      <form (submit)="onSignup (SignupForm)" #SignupForm="ngForm" *ngIf="!isLoading">
+        <div class="user-details">
+          <div class="input-box">
+            <span  class="details">Full Name</span>
+            <input type="text" ngModel placeholder="Enter your name" name="fullname" #nameInput="ngModel" required >
+            <span id="error" *ngIf="nameInput.invalid">name requird</span>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Email</span>
+            <input type="email" ngModel placeholder="Enter your email"  name="email" #emailInput="ngModel" email required >
+            <span id="error" *ngIf="emailInput.invalid">please enter valid email</span>
+          </div>
+          <div class="input-box">
+            <span class="details">Phone Number</span>
+            <input type="text" ngModel placeholder="Enter your number" name="phone" #phoneInput="ngModel" minlength="10" required >
+            <span id="error" *ngIf="phoneInput.invalid">please enter valid number</span>
+            
+          </div>
+          <div class="input-box">
+            <span class="details">Password</span>
+            <input type="password" ngModel placeholder="Enter your password" name="password" #passwordInput="ngModel" minlength="6" required >
+            <span id="error" *ngIf="passwordInput.invalid">min length 6 </span>
+          </div>
+          
+          <div class="input-box">
+            <span class="details">Date Of Birth </span>
+            <input type="date" ngModel placeholder="Enter Your DOB" name="dob" #dobInput="ngModel" required >
+          </div>
+          <div class="input-box">
+            <span class="details">NIC </span>
+            <input type="text" ngModel placeholder="NIC" name="nic" #nicInput="ngModel" required >
+            <span id="error" *ngIf="nicInput.invalid">requird this field!</span>
+          </div>
+          <div class="input-box">
+            <span class="details">Address </span>
+            <input type="text" ngModel placeholder="line 1" name="address1" #address1Input="ngModel" required ><br><br>
+            <input type="text" ngModel placeholder="line 2" name="address2" #address2Input="ngModel" required >
+          </div>
+          <div class="input-box">
+            <span class="details">Province </span>
+            <input type="text" ngModel placeholder="eg-:western" name="province" #provinceInput="ngModel" required >
+          </div>
+        </div>
+        
+        <div class="gender-details">
+          <input type="radio" ngModel value="male" name="gender" id="dot-1" #maleInput="ngModel">
+          <input type="radio" ngModel value="female" name="gender" id="dot-2" #femaleInput="ngModel">
+          
+          <span class="gender-title">Gender</span>
+          <div class="category">
+            <label for="dot-1">
+            <span class="dot one"></span>
+            <span class="gender">Male</span>
+          </label>
+          <label for="dot-2">
+            <span class="dot two"></span>
+            <span class="gender">Female</span>
+          </label>
+          </div>
+        </div>
+        <div class="button">
+          <input type="submit" [disabled]="isLoading" value="Submit">
+        </div>
+      </form>
+    </div>
+  </div>
+
+
+</body>
+

@@ -1,0 +1,148 @@
+
+
+<app-C_header></app-C_header>
+
+<mat-card>
+
+<div class="Barchart" >
+  <h2>Patient count per Province</h2>
+<canvas  id="bar">{{barchart}}</canvas>
+</div>
+</mat-card><br><br><br><br>
+
+<mat-card>
+<div class="piecharts">
+<div class="piechart1" >
+  <h2>Patient count per Province</h2>
+  <canvas  id="pie">{{piechart}}</canvas>
+  </div><br><br><br>
+
+  <div class="piechart" >
+    <h2>Patient count per Gender</h2><br><br>
+    <canvas  id="gender">{{genderchart}}</canvas>
+    </div><br><br><br>
+
+    <div class="piechart" >
+      <h2>Patient count per Age Groups</h2><br><br>
+      <canvas  id="age">{{agechart}}</canvas>
+      </div>
+    </div>
+  </mat-card>
+
+
+<mat-card>
+<div class="divtable">
+      <h2>Patient count per Province</h2>
+  <table class="table">
+    <thead>
+      <tr><th>
+Total Number of Covid-19 Patients
+      </th>
+    <td>
+      {{total}}
+    </td></tr>
+    <br><br>
+      <tr>
+        <th scope="col">Area</th>
+        <th scope="col" >Patient count</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Western Province</td>
+      <td>{{western}}</td>
+      </tr>
+      <tr>
+      <td>Southern Province</td>
+      <td>{{southern}}</td>
+      </tr>
+      <tr>
+      <td>Northern</td>
+      <td>{{northern}}</td>
+      </tr>
+      <tr>
+      <td>Eastern</td>
+      <td>{{eastern}}</td>
+      </tr>
+      <tr>
+      <td>Central</td>
+      <td>{{central}}</td>
+      </tr>
+      <tr>
+      <td>North-Central</td>
+      <td>{{northcentral}}</td>
+      </tr>
+      <tr>
+      <td>North-Western</td>
+      <td>{{northwestern}}</td>
+      </tr>
+      <tr>
+      <td>Sabaragamuwa</td>
+      <td>{{sabaragamuwa}}</td>
+      </tr>
+      <tr>
+      <td>Uva</td>
+      <td>{{uva}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+</div><br>
+  <div class="divtable">
+  <h2>Patient count per Gender</h2>
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">Gender</th>
+        <th scope="col" >Patient count</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Male</td>
+      <td>{{male}}</td>
+      </tr>
+      <tr>
+      <td>Female</td>
+      <td>{{female}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<br>
+<div class="divtable">
+<h2>Patient count per Age Groups</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Age Range</th>
+        <th scope="col" >Patient count</th>
+
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+      <td>Children </td>
+      <td>Age &#60; 18 </td>
+      <td>{{child}}</td>
+      </tr>
+      <tr>
+      <td>Adult</td>
+      <td>18&#60;Age &#60; 60</td>
+      <td>{{adult}}</td>
+      </tr>
+      <tr>
+      <td>Elder</td>
+      <td>Age &#62; 60</td>
+      <td>{{elder}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+</mat-card>
+
+

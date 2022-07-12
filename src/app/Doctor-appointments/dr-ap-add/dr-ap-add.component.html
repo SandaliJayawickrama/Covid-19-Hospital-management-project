@@ -1,0 +1,59 @@
+<button class="Navbutton" routerLink="/hospital-admin" routerLinkActive="active">Hospital home</button>
+
+
+<div class="fl-l">
+  <div class="form-style-6">
+    <h1>Add Doctor Schedule</h1>
+    <form (submit)="onSaveDrschedule(postForm)" #postForm="ngForm">
+
+      <div class="form-group">
+      <label>Doctor name</label><br/>
+      <select matInput type="text"  name="drname" [ngModel]="Drschedule?.drname" #drname="ngModel" placeholder="Enter Doctor name" required minlength="5"> <br><br>
+        <option value="default">----</option>
+        <option *ngFor="let doctor of doctors " [value]="doctor.drname">
+          {{doctor.drname}}
+        </option>
+      </select>
+      </div> <pre></pre>
+
+      <div class="form-group">
+      <label>Hospital</label><br/>
+      <input matInput type="text"  name="hospital" [ngModel]="Drschedule?.hospital" #hospital="ngModel" placeholder="Enter hospital name" required> <br><br>
+      <div *ngIf ="hospital.touched && hospital.invalid" class="alert ">Enter hospital name..!</div>
+      </div>
+
+      <div class="float-l">
+      <label>Date </label><br>
+      <input matInput type="date" name="date" id="date_picker" [ngModel]="Drschedule?.date" #date="ngModel" placeholder="Enter date" required> <br><br><br>
+      <div *ngIf ="date.touched && date.invalid" class="alert ">Enter date..!</div>
+      </div>
+
+      <div class="float-r">
+      <label>Arrival Time </label><br>
+      <input matInput type="time" name="time" [ngModel]="Drschedule?.time" #time="ngModel" required>
+      <div *ngIf ="time.touched && time.invalid" class="alert ">Enter doctor arrival time..!</div>
+      </div> <br><br><br><br><br><br><br>
+
+      <label>Specialization </label><br>
+      <input matInput type="text" name="amount" [ngModel]="Drschedule?.amount" #amount="ngModel" placeholder="Enter dr specialization" required> <br><br>
+      <div *ngIf ="amount.touched && amount.invalid" class="alert ">Enter specialization..!</div>
+
+      <button mat-raised-button class="button bttn" type="submit"> Add scedule</button>
+
+      <div class="float-r">
+
+      <button mat-raised-button class="button bttn" type="button"  routerLink="/drA-display" routerLinkActive="active">View scedules</button>
+      </div>
+
+    </form>
+    </div>
+    </div>
+
+    <div class="fl-r">
+      <img src="assets/Images/docshed2.jpg" alt="Mountains" style="width:100%">
+    </div>
+
+
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+      <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+

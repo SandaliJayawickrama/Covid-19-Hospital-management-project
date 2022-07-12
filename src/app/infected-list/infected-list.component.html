@@ -1,0 +1,89 @@
+<app-A_header></app-A_header>
+<mat-card>
+<form>
+  <div>
+    <input type="text" name="search" placeholder="Search by Patient Name" class="form-control" [(ngModel)]="searchpatient">
+  </div>
+</form>
+</mat-card><br><br>
+
+<mat-card>
+  <h1>Patient Details</h1><br><br>
+  <mat-spinner *ngIf="isLoading===true"></mat-spinner>
+  <ng-container *ngIf="isLoading===false">
+  <mat-accordion multi="true" *ngIf="posts.length>0" >
+  <mat-expansion-panel  *ngFor="let post of posts | filter:searchpatient" >
+    <mat-expansion-panel-header>
+  <h3>View  details of {{post.newName}}</h3>
+    </mat-expansion-panel-header>
+
+    <form >
+      <div >
+        <label >Full Name</label>
+        <input type="text" class="form-control" value="{{post.newName}}" readonly>
+
+      </div>
+
+
+
+      <div >
+        <label >Age</label>
+        <input type="text"class="form-control-age" value="{{post.newAge}}" readonly>
+      </div>
+      <div >
+        <label  >Gender</label>
+        <select class="form-select"  value="{{post.newGender}}" readonly  >
+          <option selected >Choose..</option>
+          <option>Male</option>
+          <option>Female</option>
+        </select>
+      </div>
+      <div >
+        <label >Email</label>
+        <input type="email" class="form-control" value="{{post.newEmail}}" readonly>
+      </div>
+
+      <div >
+        <label >Contact no</label>
+        <input type="text"class="form-control-1" value="{{post.newContact}}" readonly>
+      </div>
+
+      <div >
+        <label >Address</label>
+        <input type="text"   class="form-control" value="{{post.newAddress}}" readonly>
+      </div>
+
+      <div >
+        <label  >Province</label>
+        <select class="form-select" value="{{post.newProvince}}" readonly >
+          <option>Western</option>
+          <option>Southern</option>
+          <option>Northern</option>
+          <option>Eastern</option>
+          <option>Central</option>
+          <option>North Central</option>
+          <option>North Western</option>
+          <option>Sabaragamuwa</option>
+          <option>Uva</option>
+        </select >
+      </div>
+
+      <div >
+        <label >City</label>
+        <input type="text" class="form-control-1" value="{{post.newCity}}"readonly >
+      </div><br><br>
+<div>
+<button class="btn btn-primary2" [routerLink]="['/edit',post.id]">Edit</button>  <button class="btn btn-primary3" (click)="onDelete(post.id)">Delete</button>
+
+</div>
+
+    </form>
+
+
+
+
+  </mat-expansion-panel>
+  </mat-accordion>
+</ng-container>
+  </mat-card>
+

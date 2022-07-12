@@ -1,0 +1,40 @@
+
+
+
+<mat-card>
+  <mat-spinner *ngif="isLoading===true"></mat-spinner>
+<h2>Enter details of recently visited people</h2>
+
+
+<form ngNativeValidate class="form" (submit)="onSaveDetail(detailsForm)" #detailsForm="ngForm" *ngIf="isLoading===false" >
+  <div >
+    <label >Full Name</label><br>
+    <input type="text" class="form-control-2" name="name1" [ngModel]="detail?.recentName" required>
+  </div>
+
+  <div >
+    <label >Contacts of Associates</label><br>
+    <input type="number" class="form-control-3" name="contacts"[ngModel]="detail?.recentContacts"required>
+  </div>
+ <div >
+    <label >Recently Travelled Public Places</label><br>
+    <input type="text" class="form-control-2" name="places" [ngModel]="detail?.recentPlaces" required>
+  </div>
+
+  <br>
+  <div >
+    <button type="submit" class="btn btn-primary" >Submit</button>
+  </div>
+</form>
+
+</mat-card>
+
+
+
+
+
+
+
+
+
+

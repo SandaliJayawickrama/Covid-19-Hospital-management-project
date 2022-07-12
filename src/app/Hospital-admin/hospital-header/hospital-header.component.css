@@ -1,0 +1,59 @@
+html{
+  scroll-behavior: smooth;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+}
+
+.sub-header{
+  height: 15vh;
+  width: 100%;
+  background-image: linear-gradient(rgba(190, 174, 174, 0.397),rgba(85, 92, 100, 0.7)),url(/assets/Images/bc2.png);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  text-align: center;
+  color: rgb(173, 219, 230);
+}
+
+
+
+nav{
+  display: flex;
+  padding: 1% 4%;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
+
+nav img{
+  width: 60px;
+  height: 60px;
+  border-radius: 10px;
+}
+
+.logoutoption a{
+  color: #fff;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.logoutoption a:hover{
+  color: #f44336;
+  transition: 0.5s;
+}
+
+/*Use Keyframes*/
+@-webkit-keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}
+@-moz-keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}
+@keyframes spin{
+  100%{-webkit-transform: rotate(360deg);}
+}

@@ -1,0 +1,53 @@
+
+<app-A_header></app-A_header>
+<mat-card>
+  <form>
+    <div>
+      <input type="text" name="search" placeholder="Search by Name" class="form-control-2" [(ngModel)]="searchrecent">
+    </div>
+  </form>
+  </mat-card><br><br>
+<mat-card>
+  <br><br><br><br><h1>Recently Visited People's Details</h1><br>
+<br><br>
+<mat-spinner *ngIf="isLoading===true"></mat-spinner>
+<ng-container *ngIf="isLoading===false">
+  <mat-accordion *ngIf="Associates.length>0">
+  <mat-expansion-panel *ngFor="let post of Associates | filter:searchrecent" >
+    <mat-expansion-panel-header>
+      <h3>View  details of {{post.recentName}}</h3>
+    </mat-expansion-panel-header>
+
+
+    <form class="form"  >
+      <div >
+        <label >Full Name</label><br>
+        <input type="text" class="form-control-2" value="{{post.recentName}}" readonly>
+      </div>
+
+      <div >
+        <label >Contacts of Associates</label><br>
+        <input type="text" class="form-control-3"value="{{post.recentContacts}}" readonly>
+      </div>
+      <div >
+        <label >Recently travelled Public Places</label><br>
+        <input type="text" class="form-control-2"value="{{post.recentPlaces}}" readonly>
+      </div>
+
+
+<br><br>
+  <div>
+    <button class="btn btn-primary2" [routerLink]="['/update',post.id]">Edit</button>  <button class="btn btn-primary3"(click)="ondelete(post.id)">Delete</button>
+
+    </div>
+
+
+</form>
+  </mat-expansion-panel>
+  </mat-accordion>
+</ng-container>
+  </mat-card>
+
+
+
+

@@ -1,0 +1,67 @@
+<h1>Card Details</h1>
+
+ <mat-card>
+   <mat-spinner *ngIf="isLoading"></mat-spinner>
+  <form (submit)="onSavePost(cardForm)" #cardForm="ngForm" *ngIf="!isLoading">
+
+
+    <mat-form-field>
+   <label for="paymentID">PaymentID</label>
+   <input
+   type="text"
+   name="paymentID"
+   id="paymentID"
+   matInput
+   [ngModel]="card?.paymentID"
+   required
+   #paymentID="ngModel">
+   <mat-error *ngIf="paymentID.invalid">Please enter the ID</mat-error>
+  </mat-form-field>
+
+
+  <br>
+
+    <mat-form-field>
+    <label for="cardNumber">CardNumber</label>
+    <input  type="text" name="number" id="number" matInput [ngModel]="card?.number" requied>
+    </mat-form-field>
+
+  <br>
+    <mat-form-field>
+    <label for="name">Name On Card</label>
+    <input type="text" name="name" id="name"  matInput [ngModel]="card?.name">
+    </mat-form-field>
+
+
+  <br>
+
+  <mat-form-field>
+    <label for="edate">Expiry Date</label>
+    <input type="date" name="edate" id="edate"  matInput [ngModel]="card?.edate">
+    </mat-form-field>
+
+  <br>
+  <mat-form-field>
+    <label for="cvc">CVC</label>
+    <input type="text" name="cvc" id="cvc"  matInput [ngModel]="card?.cvc">
+    </mat-form-field>
+
+  <br>
+  <mat-form-field>
+    <label for="date">Date</label>
+    <input type="date" name="date" id="date"  matInput [ngModel]="card?.date">
+    </mat-form-field>
+
+<br>
+<br>
+<button
+mat-raised-button
+color="primary"
+type="submit">Confirm Payment</button>
+</form>
+</mat-card>
+<br>
+<button routerLink="/list">VIEW DETAILS</button>
+
+
+

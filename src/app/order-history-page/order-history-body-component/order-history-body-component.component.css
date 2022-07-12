@@ -1,0 +1,53 @@
+.tablehistory{
+  width: 60%;
+  margin: auto;
+   text-align: center;
+  padding-top: 100px;
+
+}
+
+.table-box{
+  margin: 0px auto;
+  margin-bottom: 50px;
+
+}
+
+h1{
+  margin-top: -50px;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 30PX;
+  color: tomato;
+}
+
+
+.table-row{
+  display: table;
+  width: 100%;
+  margin: 10px auto;
+  font-family: sans-serif;
+  background: transparent;
+  padding: 12px 0;
+  color: #555;
+  font-size: 13px;
+  box-shadow: 0 1px 4px 0 rgba(0,0,50,0.3);
+}
+
+.table-cell{
+   display: table-cell;
+   width: 20%;
+   padding: 4px 0;
+   border-right: 1px solid #d6d4dd;
+}
+
+.table-head{
+  background: #8665f7;
+  box-shadow: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.table-head .table-cell{
+  border-right: none;
+}
+
+

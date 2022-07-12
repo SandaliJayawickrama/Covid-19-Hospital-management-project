@@ -1,0 +1,122 @@
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-flex">
+      <img src="" width="30px" alt="">
+
+
+      </div>
+    </div>
+    <div class="sidebar-main">
+        <div class="sidebar-user">
+      <img src="/assets/Images/dp1.png" alt="">
+      <div>
+          <h3>CHAMATH SENADEERA</h3>
+          <span>chamthsenadeera@gmail.com</span>
+        </div>
+      </div>
+
+      <div class="sidebar-menu">
+
+          <div class="menu-head">
+               <span>Manage</span>
+            </div>
+            <ul>
+              <li>
+                <a href="" routerLink="/dashboard" routerLinkActive="active">
+                     <span class="las la-window-maximize"></span>
+                     DASHBOARD
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/adminadd" routerLinkActive="active">
+                     <span class="las la-plus-circle"></span>
+                     ADD PHARMACIES
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/adminview" routerLinkActive="active">
+                     <span class="las la-eye"></span>
+                     VIEW PHARMACY BRANCHES
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/view" routerLinkActive="active">
+                     <span class="las la-flag-checkered"></span>
+                    CUSTOMER ORDERS
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/orderreport" routerLinkActive="active">
+                     <span class="las la-flag-checkered"></span>
+                     ORDER REPORT
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/pharmacyUI" routerLinkActive="active">
+                     <span class="las la-sign-out-alt"></span>
+                     LOGOUT
+                </a>
+              </li>
+              </ul>
+        </div>
+
+      </div>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <div class="menu-toggle">
+        <label for="">
+          <span class="las la-bars"></span>
+        </label>
+      </div>
+
+      <div>
+          <span class="las la-search"></span>
+          <span class="las la-bookmark"></span>
+          <span class="las la-sms"></span>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-header">
+          <div>
+            <h1>PHARMACY  BRANCH LIST</h1>
+
+            </div>
+
+
+          </div>
+
+          <div class="container">
+
+            <table>
+              <thead>
+                <tr>
+                  <th>PHARMACY NO</th>
+                  <th>NAME</th>
+                  <th>LOCATION</th>
+                  <th>HOTLINE</th>
+                  <th></th>
+                  </tr>
+                </thead>
+                <tr *ngFor="let pn of pnameorderService.pnameorders | filter:searchText">
+                  <td>{{pn.pno}}</td>
+                  <td>{{pn.pname}}</td>
+                  <td>{{pn.location}}</td>
+                  <td>{{pn.cno}}</td>
+                  <td>
+                   <button type="submit" class="hero-btn1 red-btn" (click)="onDelete(pn._id)">DELETE</button>
+
+                 </td>
+                  </tr>
+              </table>
+
+              </div>
+
+
+
+        </main>
+    </div>
+
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br>

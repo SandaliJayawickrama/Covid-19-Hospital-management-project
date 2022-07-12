@@ -1,0 +1,104 @@
+
+<section class="formconfirm">
+
+	<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+  <h1>Order confirm Details</h1>
+ <form #confirmorderForm="ngForm" (ngSubmit)="onSubmit(confirmorderForm)">
+      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder._id">
+
+      <mat-form-field hideRequiredMarker>
+      <input class="field" matInput type="text" name="username" #name="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder.username" placeholder="Enter Username" required minlength="4" appForbiddenName="bob">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)"
+      class="alert">
+
+    <div *ngIf="name.errors?.required">
+      Username is required.
+    </div>
+    <div *ngIf="name.errors?.minlength">
+      Username must be at least 4 characters long.
+    </div>
+    <div *ngIf="name.errors?.forbiddenName">
+      Username cannot be Bob.
+    </div>
+
+    </div>
+      </mat-form-field><br>
+      <mat-form-field hideRequiredMarker>
+      <input class="field" matInput type="text" name="drugid" #name="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder.drugid" placeholder="Enter Product ID of Drug you Want" required>
+    </mat-form-field><br>
+    <mat-form-field hideRequiredMarker>
+      <input class="field" matInput type="text" name="iname" #name="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder.iname" placeholder="Enter Drug Name" required>
+      <div *ngIf="drugname.invalid && (drugname.dirty || name.touched)"
+      class="alert">
+
+      <div *ngIf="drugname.errors?.required">
+        Drug Name is required.
+      </div>
+      </div>
+    </mat-form-field><br>
+    <mat-form-field hideRequiredMarker>
+      <input class="field" matInput type="text" name="itype" #name="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder.itype" placeholder="Drug Type" required>
+    </mat-form-field><br>
+    <mat-form-field hideRequiredMarker>
+      <input class="field" matInput type="text" name="nitems" #name="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder.nitems" placeholder="No of Items" required>
+    </mat-form-field><br>
+
+
+     <button type="submit" class="btn" [disabled]="!confirmorderForm.valid">Submit</button>
+     <button type="button" (click)="resetForm(confirmorderForm)" class="btn">Reset</button>
+
+
+     </form>
+
+     </div>
+     </div>
+
+
+     </div>
+
+</section>
+
+<!--
+<section class="tablehistory">
+  <h1>SUBMITTED LIST</h1>
+     <table >
+       <thead>
+         <tr>
+
+           <th>Drug ID</th>
+           <th>Name of Item</th>
+           <th>Type</th>
+           <th>No Of Items</th>
+
+
+           <th></th>
+         </tr>
+
+         </thead>
+         <tr *ngFor="let cord of confirmorderService.confirmorders">
+          <td>{{cord.drugid}}</td>
+          <td>{{cord.iname}}</td>
+          <td>{{cord.itype}}</td>
+          <td>{{cord.nitems}}</td>
+
+          <td>
+            <button type="submit" (click)="onEdit(cord)" class="hero-btn1 red-btn">Edit</button>
+            <button type="submit" (click)="onDelete(cord._id,confirmorderForm)" class="hero-btn1 red-btn">Delete</button>
+          </td>
+       </tr>
+     </table>
+
+
+
+
+
+
+
+
+
+
+</section>-->
+ <br>

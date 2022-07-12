@@ -1,0 +1,250 @@
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-flex">
+      <img src="" width="30px" alt="">
+
+      <div class="brand-icons">
+        <span class="las la-bell"></span>
+        <span class="las la-user-circle"></span>
+
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-main">
+        <div class="sidebar-user">
+      <img src="/assets/Images/dp1.png" alt="">
+       <div>
+        <h3>CHAMATH SENADEERA</h3>
+        <span>chamthsenadeera@gmail.com</span>
+         </div>
+      </div>
+
+      <div class="sidebar-menu">
+
+          <div class="menu-head">
+               <span>Manage</span>
+            </div>
+            <ul>
+              <li>
+                <a href="" routerLink="/dashboard" routerLinkActive="active">
+                     <span class="las la-window-maximize"></span>
+                     Dashboard
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/adminadd" routerLinkActive="active">
+                     <span class="las la-plus-circle"></span>
+                     ADD PHARMACIES
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/adminview" routerLinkActive="active">
+                     <span class="las la-eye"></span>
+                     VIEW PHARMACY BRANCHES
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/view" routerLinkActive="active">
+                     <span class="las la-flag-checkered"></span>
+                     View Orders
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/orderreport" routerLinkActive="active">
+                     <span class="las la-flag-checkered"></span>
+                     Order Report
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/pharmacyUI" routerLinkActive="active">
+                     <span class="las la-sign-out-alt"></span>
+                     Logout
+                </a>
+              </li>
+              </ul>
+
+        </div>
+
+      </div>
+  </div>
+
+
+  <div class="main-content">
+    <header>
+      <div class="menu-toggle">
+        <label for="">
+          <span class="las la-bars"></span>
+        </label>
+      </div>
+
+      <div class="header-icons">
+          <span class="las la-search"></span>
+          <span class="las la-bookmark"></span>
+          <span class="las la-sms"></span>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-header">
+          <div>
+            <h1>CUSTOMER ORDERS</h1>
+
+            </div>
+
+
+          </div>
+
+
+
+<!--<section class="formconfirm">
+<h1>SEARCH TO VIEW </h1>
+<div class="flex1">
+<input class="search-field skills" name="search" type="text" placeholder="Enter UserName And Find Order" [(ngModel)]="searchText"/>
+<button type="button" class="hero-btn1 red-btn" routerLink="/orderconfirm" routerLinkActive="active">GO BACK</button>
+</div>
+<table >
+  <thead>
+    <tr>
+      <th>User Name</th>
+      <th>Drug ID</th>
+      <th>Name of Item</th>
+      <th>Type</th>
+      <th>No Of Items</th>
+
+
+      <th></th>
+    </tr>
+
+    </thead>
+    <tr *ngFor="let cord of confirmorderService.confirmorders | filter:searchText" >
+    <td>{{cord.username}}</td>
+     <td>{{cord.drugid}}</td>
+     <td>{{cord.iname}}</td>
+     <td>{{cord.itype}}</td>
+     <td>{{cord.nitems}}</td>
+
+     <td>
+
+       <button type="submit" (click)="onDelete(cord._id)" class="hero-btn1 red-btn">Delete</button>
+     </td>
+  </tr>
+</table>
+</section>-->
+
+<section class="formconfirm">
+
+	<div class="container">
+		<div class="contact-box">
+			<div class="left"></div>
+			<div class="right">
+  <h1>Order confirm Details</h1>
+ <form #confirmorderForm="ngForm" (ngSubmit)="onSubmit(confirmorderForm)">
+      <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder._id">
+
+      <mat-form-field hideRequiredMarker>
+      <input class="field" matInput type="text" name="username" #name="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder.username" placeholder="Enter Username" required minlength="4" appForbiddenName="bob">
+      <div *ngIf="name.invalid && (name.dirty || name.touched)"
+      class="alert">
+
+    <div *ngIf="name.errors?.required">
+      Username is required.
+    </div>
+    <div *ngIf="name.errors?.minlength">
+      Username must be at least 4 characters long.
+    </div>
+    <div *ngIf="name.errors?.forbiddenName">
+      Username cannot be Bob.
+    </div>
+
+    </div>
+      </mat-form-field><br>
+      <mat-form-field hideRequiredMarker>
+      <input class="field" matInput type="text" name="drugid" #name="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder.drugid" placeholder="Enter Product ID" required>
+    </mat-form-field><br>
+    <mat-form-field hideRequiredMarker>
+      <input class="field" matInput type="text" name="iname" #name="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder.iname" placeholder="Enter Drug Name" required>
+      <div *ngIf="drugname.invalid && (drugname.dirty || name.touched)"
+      class="alert">
+
+      <div *ngIf="drugname.errors?.required">
+        Drug Name is required.
+      </div>
+      </div>
+    </mat-form-field><br>
+    <mat-form-field hideRequiredMarker>
+      <input class="field" matInput type="text" name="itype" #name="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder.itype" placeholder="Drug Type" required>
+    </mat-form-field><br>
+    <mat-form-field hideRequiredMarker>
+      <input class="field" matInput type="text" name="nitems" #name="ngModel" [(ngModel)]="confirmorderService.selectedConfirmorder.nitems" placeholder="No of Items" required>
+    </mat-form-field><br>
+
+
+     <button type="submit" class="btn" [disabled]="!confirmorderForm.valid">Submit</button>
+     <button type="button" (click)="resetForm(confirmorderForm)" class="btn">Reset</button>
+
+
+     </form>
+
+     </div>
+     </div>
+     <!--<button type="button" class="button" routerLink="/view" routerLinkActive="active">
+       <span class="button__text">Customer Orders</span>
+       <span class="button__icon">
+        <img src="/assets/Images/iconarrow.png">
+
+       </span>
+     </button>-->
+
+     </div>
+
+</section>
+
+
+<section class="tablehistory">
+
+
+<input class="search2" name="search" type="text" placeholder="SEARCH ORDERS" [(ngModel)]="searchText"/>
+
+
+  <h1>ORDER LIST</h1>
+     <table >
+       <thead>
+         <tr>
+
+           <th>Drug ID</th>
+           <th>Name of Item</th>
+           <th>Type</th>
+           <th>No Of Items</th>
+
+
+           <th></th>
+         </tr>
+
+         </thead>
+         <tr *ngFor="let cord of confirmorderService.confirmorders | filter:searchText" >
+          <td>{{cord.drugid}}</td>
+          <td>{{cord.iname}}</td>
+          <td>{{cord.itype}}</td>
+          <td>{{cord.nitems}}</td>
+
+          <td>
+            <button type="submit" (click)="onEdit(cord)" class="hero-btn1 red-btn">Edit</button>
+            <button type="submit" (click)="onDelete(cord._id,confirmorderForm)" class="hero-btn1 red-btn">Delete</button>
+          </td>
+       </tr>
+     </table>
+
+
+
+
+
+
+
+
+
+
+</section>
+
+</main>
+</div>
+<br><br><br><br><br><br><br><br><br>

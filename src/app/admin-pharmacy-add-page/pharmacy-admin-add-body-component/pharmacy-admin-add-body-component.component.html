@@ -1,0 +1,145 @@
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-flex">
+      <img src="" width="30px" alt="">
+
+      <div class="brand-icons">
+        <span class="las la-bell"></span>
+        <span class="las la-user-circle"></span>
+
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-main">
+        <div class="sidebar-user">
+      <img src="/assets/Images/dp1.png" alt="">
+       <div>
+        <h3>CHAMATH SENADEERA</h3>
+        <span>chamthsenadeera@gmail.com</span>
+         </div>
+      </div>
+
+      <div class="sidebar-menu">
+
+          <div class="menu-head">
+               <span>Manage</span>
+            </div>
+            <ul>
+              <li>
+                <a href="" routerLink="/dashboard" routerLinkActive="active">
+                     <span class="las la-window-maximize"></span>
+                     DASHBOARD
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/adminadd" routerLinkActive="active">
+                     <span class="las la-plus-circle"></span>
+                     ADD PHARMACIES
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/adminview" routerLinkActive="active">
+                     <span class="las la-eye"></span>
+                     VIEW PHARMACY BRANCHES
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/view" routerLinkActive="active">
+                     <span class="las la-flag-checkered"></span>
+                    CUSTOMER ORDERS
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/orderreport" routerLinkActive="active">
+                     <span class="las la-flag-checkered"></span>
+                     ORDER REPORT
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/pharmacyUI" routerLinkActive="active">
+                     <span class="las la-sign-out-alt"></span>
+                     LOGOUT
+                </a>
+              </li>
+              </ul>
+
+        </div>
+
+      </div>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <div class="menu-toggle">
+        <label for="">
+          <span class="las la-bars"></span>
+        </label>
+      </div>
+
+      <div class="header-icons">
+          <span class="las la-search"></span>
+          <span class="las la-bookmark"></span>
+          <span class="las la-sms"></span>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-header">
+          <div>
+            <h1>ADD PHARMACY BRANCHES</h1>
+
+            </div>
+
+
+          </div>
+          <section class="formconfirm">
+            <div class="container">
+              <div class="border-box">
+           <form #pnameorderForm="ngForm" (ngSubmit)="onSubmit(pnameorderForm)">
+                <input type="hidden" name="_id" ngModel #_id="ngModel" [(ngModel)]="pnameorderService.selectedPnameorder._id">
+                <div class="form-group">
+                  <mat-form-field hideRequiredMarker>
+
+                  <input class="form-control" matInput type="text" name="pno" #name="ngModel" [(ngModel)]="pnameorderService.selectedPnameorder.pno"  placeholder="Enter Pharmacy Branch No" required minlength="4">
+                  <div *ngIf="name.invalid && (name.dirty || name.touched)"
+                  class="alert">
+
+                <div *ngIf="name.errors?.required">
+                  Name is required.
+                </div>
+                <div *ngIf="name.errors?.minlength">
+                  Name must be at least 4 characters long.
+                </div>
+                </div>
+                </mat-form-field>
+                </div><br>
+                  <div class="form-group">
+                    <mat-form-field hideRequiredMarker>
+                  <input class="form-control" matInput type="text" name="pname" #name="ngModel" [(ngModel)]="pnameorderService.selectedPnameorder.pname" placeholder="Name Of Pharmacy Branch" required>
+                </mat-form-field>
+                </div><br>
+                <div class="form-group">
+                  <mat-form-field hideRequiredMarker>
+                  <input class="form-control" matInput type="text" name="location" #name="ngModel" [(ngModel)]="pnameorderService.selectedPnameorder.location" placeholder="Enter Location" required>
+                </mat-form-field>
+                </div><br>
+                <div class="form-group">
+                  <mat-form-field hideRequiredMarker>
+                  <input class="form-control" matInput type="text" name="cno" #name="ngModel" [(ngModel)]="pnameorderService.selectedPnameorder.cno" placeholder="Enter Contact No" required>
+                </mat-form-field>
+                </div><br>
+
+
+               <button type="submit" class="button" [disabled]="!pnameorderForm.valid">Submit</button>
+               <button type="button" class="button" (click)="resetForm(pnameorderForm)">Reset</button>
+
+
+               </form>
+     </div>
+    </div>
+          </section>
+
+
+        </main>
+    </div>
+<br><br>

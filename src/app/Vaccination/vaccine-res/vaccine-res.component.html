@@ -1,0 +1,141 @@
+
+<hr>
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+  </head>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+  <body ng-app="">
+    <br><br>
+    <div class="testbox">
+      <form ngNativeValidate #resForm="ngForm" (ngSubmit)="onReserve(resForm)" >
+        <input type="hidden" name="_id" #_id="ngModel" [(ngModel)]="resformService.selectedResform._id">
+        <br/>
+        <p>
+        </p>
+        <br/>
+        <div class="colums">
+          <div class="item">
+            <label > Name<span>*</span></label>
+            <input   type="text" name="name"  #nname="ngModel" [(ngModel)]="resformService.selectedResform.name" required placeholder="Applicants Name"/>
+            <div *ngIf ="nname.touched && nname.invalid" class="alert alert-danger"><!--validation-->
+              Required
+            </div>
+          </div>
+          <div class="item">
+            <label > National ID<span>*</span></label>
+            <input   type="text" name="nationalid" [(ngModel)]="resformService.selectedResform.nationalid"  #natid="ngModel" placeholder=" National ID No." required/>
+            <div *ngIf ="natid.touched && natid.invalid" class="alert alert-danger"><!--validation-->
+              Required
+            </div>
+          </div>
+          <div class="item">
+            <label>Age<span>*</span></label>
+            <input  type="number" min="18" size="4" name="age" [(ngModel)]="resformService.selectedResform.age" #age="ngModel" placeholder="Age" required/>
+            <div *ngIf ="age.touched && age.invalid" class="alert alert-danger"><!--validation-->
+              <div *ngIf="age.errors?.required" class="alert alert-danger">
+                Age Required
+              </div>
+              <div *ngIf="age.errors?.min" class="alert alert-danger">
+                  age>18
+              </div>
+            </div>
+          </div>
+          <div class="item">
+            <label >Phone<span></span></label>
+            <input  type="text" name="phone" [(ngModel)]="resformService.selectedResform.phone" #name="ngModel" placeholder="Applicants Phone No." required/>
+          </div>
+          <div class="item">
+            <label >Email<span>*</span></label>
+            <input   type="email"  pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"  name="email" [(ngModel)]="resformService.selectedResform.email" #email="ngModel" placeholder="Applicants Email" required/>
+            <div *ngIf ="email.touched && email.invalid" class="alert alert-danger">
+              <div *ngIf="email.errors?.required" class="alert alert-danger"><!--validation-->
+                Email Required
+              </div>
+              <div *ngIf="email.errors?.pattern" class="alert alert-danger">
+                  Email Invalid
+              </div>
+            </div>
+
+          </div>
+          <div class="item">
+            <label >City<span></span></label>
+            <input type="text"   name="city" [(ngModel)]="resformService.selectedResform.city" #name="ngModel" placeholder="City" required/>
+          </div>
+          <div class="item">
+            <label >Street<span></span></label>
+            <input  type="text"   name="street" [(ngModel)]="resformService.selectedResform.street" #name="ngModel" placeholder="Street" required/>
+          </div>
+          <div class="item">
+            <label >House/Appartment No.<span></span></label>
+            <input  type="text"   name="houseno" [(ngModel)]="resformService.selectedResform.houseno" #name="ngModel" placeholder="House/Appartment No."required/>
+          </div>
+        </div>
+        <div class="item">
+          <label >Any Known Allergies (Optional).</label>
+          <textarea rows="3"  name="opt" [(ngModel)]="resformService.selectedResform.opt" #name="ngModel" placeholder="Anything we need to know?"></textarea>
+        </div>
+        <div class="item">
+          <p style="color: brown;">*</p>
+             <label >Vacination Center<span></span></label><br>
+          <select name="code" [(ngModel)]="resformService.selectedResform.code" #name="ngModel"required >
+            <option value="default">----</option>
+            <option *ngFor="let Vacschedule of Vschedule " [value]="Vacschedule.centerA">
+              {{Vacschedule.centerA}}
+            </option>
+          </select>
+
+        </div>
+        <div class="item">
+          <p style="color: brown;">*</p>
+          <p>Date</p>
+          <input type="date" name="date" [(ngModel)]="resformService.selectedResform.date" #name="ngModel" required>
+        </div>
+        <div class="item">
+          <p style="color: brown;">*</p>
+          <p>Time</p>
+          <select name="time" [(ngModel)]="resformService.selectedResform.time" #name="ngModel" required>
+          <option value="Morining" >Morining</option>
+            <option value="Evening">Evening</option>
+          </select>
+        </div>
+        <div class="btn-block">
+
+          <button type="submit" class="submit" >Reserve</button><br><br>
+          <button type="button" class="red" (click)="resetForm(resForm)">Reset</button>
+
+        </div>
+      </form>
+    </div>
+<!--
+    <div>
+      <hr>
+    <table id="customers">
+      <thead>
+        <th>Reservation ID</th>
+        <th>Name</th>
+        <th>Age</th>
+        <th>Optional Info</th>
+        <th>Date</th>
+        <th>Time</th>
+      </thead>
+      <tr *ngFor="let Vres of resformService.resForm">
+        <td>{{Vres._id}}</td>
+        <td>{{Vres.name}}</td>
+        <td>{{Vres.age}}</td>
+        <td>{{Vres.opt}}</td>
+        <td>{{Vres.date}}</td>
+        <td>{{Vres.time}}</td>
+        <td>
+          <a class="button" (click)="onUpdate(Vres)">Update</a>
+         <a  class="button" (click)= "onDelete(Vres._id,resForm)">Delete</a>
+        </td>
+    </table>
+    </div>-->
+
+  </body>
+</html>

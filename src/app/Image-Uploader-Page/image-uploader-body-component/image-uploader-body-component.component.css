@@ -1,0 +1,229 @@
+*{
+  overflow: hidden;
+}
+
+.slider{
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+
+
+}
+
+.banner1,.banner2,.banner3,.banner4{
+  height: 50vh;
+  width: 100%;
+  left: 0;
+  position: absolute;
+
+}
+
+.img1{
+  width: 110%;
+  animation: zoom-out1 3s linear infinite;
+
+
+}
+
+@keyframes zoom-out1{
+  100%{
+    width: 100%;
+  }
+}
+
+.text-box{
+  width: 600px;
+  position: absolute;
+  top: 250px;
+  left: 100px;
+  color: #fff;
+}
+
+.text-box h1{
+  margin-bottom: 40px;
+}
+
+.text-box p{
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 80px;
+}
+
+.text-box span{
+  background: red;
+  height: 1px;
+  width: 100px;
+  position: absolute;
+  left: 0;
+}
+
+.banner1{
+  animation: slide1 12s linear infinite;
+
+}
+
+.banner2{
+  animation: slide2 12s linear infinite;
+
+}
+.banner3{
+  animation: slide3 12s linear infinite;
+
+}
+.banner4{
+  animation: slide4 12s linear infinite;
+
+}
+
+@keyframes slide1{
+  0%{
+    visibility: visible;
+   }
+   25%{
+     visibility: hidden;
+   }
+   50%{
+    visibility: hidden;
+  }
+  75%{
+    visibility: hidden;
+  }
+  100%{
+    visibility: visible;
+  }
+
+}
+
+@keyframes slide2{
+  0%{
+    visibility: hidden;
+   }
+   25%{
+     visibility: hidden;
+   }
+   50%{
+    visibility: visible;
+  }
+  75%{
+    visibility: hidden;
+  }
+  100%{
+    visibility: hidden;
+  }
+
+}
+
+@keyframes slide3{
+  0%{
+    visibility: hidden;
+   }
+   25%{
+     visibility: hidden;
+   }
+   50%{
+    visibility: hidden;
+  }
+  75%{
+    visibility: visible;
+  }
+  100%{
+    visibility: hidden;
+  }
+
+}
+
+@keyframes slide4{
+  0%{
+    visibility: hidden;
+   }
+   25%{
+     visibility: hidden;
+   }
+   50%{
+    visibility: hidden;
+  }
+  75%{
+    visibility: hidden;
+  }
+  100%{
+    visibility: visible;
+  }
+
+}
+
+.pres1{
+  width: 80%;
+  margin: auto;
+  margin-top: 450px;
+  text-align: center;
+  padding-top: 100px;
+
+}
+
+h3{
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 35px;
+  color: #fff;
+  font-weight: bold;
+
+}
+
+input[type="file"] {
+  visibility: hidden;
+}
+
+.pres{
+
+  background: rgb(0, 0, 0, 0.5);
+  padding: 20px;
+  border-radius: 5px;
+  padding-top:30px;
+
+}
+
+
+.hero-btn{
+  height: 50px;
+  width: 200px;
+  background: #f44336;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 10PX;
+}
+
+.btn2{
+  height: 50px;
+  width: 300px;
+  background: navy;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 10px;
+  margin-right: 10PX;
+}
+
+@media(max-width: 700px){
+  .pres{
+
+    height: 20px;
+    background: #d8d8d8;
+    border-radius: 20px;
+
+
+  }
+  h4{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+    color: tomato;
+    margin-top: -50px;
+  }
+  .imgupload{
+    width: 100px;
+    height: 100px;
+  }
+}
+

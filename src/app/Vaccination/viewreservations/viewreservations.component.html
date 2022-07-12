@@ -1,0 +1,37 @@
+<div class="heading">
+  <h1>
+  View Vaccination Reservations
+  </h1>
+</div>
+<div><input type="text" name="resid" #vid placeholder="Enter National ID.No">
+<button  class="delete"  type="button" (click)="onDelete(vid.value)" >Cancel Reservation</button></div><h4 style="color: brown;">*Note you can change your reservation details by contacting our staffcontact<a href="tel:+94112729729">+94112729729</a></h4><br><br>
+<input type="text" name="aid" #aid placeholder="Enter your email to check appointments" [(ngModel)]="searchText">
+<div>
+<!--<button  class="download"  (click)="downloaddetails()">Download table</button>-->
+
+
+<table id="customers">
+  <thead>
+
+    <th>Name</th>
+    <th>Age</th>
+    <th>Vaccination Center</th>
+    <th>Date</th>
+    <th>Time</th>
+
+
+  </thead>
+  <tr *ngFor="let Vres of resformService.resForm | filter:searchText">
+    <td>{{Vres.name}}</td>
+    <td>{{Vres.age}}</td>
+    <td>{{Vres.code}}</td>
+    <td>{{Vres.date}}</td>
+    <td>{{Vres.time}}</td>
+
+
+
+
+
+</table>
+<br><br><br><br><br><br><br><br><br><br>
+</div>

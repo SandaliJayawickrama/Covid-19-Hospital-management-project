@@ -1,0 +1,39 @@
+<button class="Navbutton" routerLink="/hospital-admin" routerLinkActive="active">Hospital home</button>
+
+
+<div class="fl-l">
+<div class="form-style-6">
+  <h1>Add Doctors</h1>
+    <form ngNativeValidate (submit)="onSavedoctor(postForm)" #postForm="ngForm">
+
+      <label>Doctor name</label><br/>
+        <input matInput type="text"  name="drname" [ngModel]="doctor?.drname" #drname="ngModel" placeholder="Enter name" required> <br><br>
+
+
+      <label>Phone</label><br/>
+      <input matInput type="text" name="phone" [ngModel]="doctor?.phone" #phone="ngModel" minlength="10" maxlength="10" pattern="\d{10}" placeholder="Enter 10 digit phone no" required> <br><br>
+
+
+      <label>Address </label><br>
+      <input matInput type="text" name="address" [ngModel]="doctor?.address" #address="ngModel" placeholder="Enter address" required> <br><br>
+
+      <label>Specialization </label><br>
+      <input matInput type="text" name="quali" [ngModel]="doctor?.quali" #quali="ngModel" placeholder="Enter specialization" required> <br><br>
+
+
+      <button mat-raised-button class="button bttn" type="submit"> Add scedule</button>
+
+      <div class="float-r">
+
+      <button mat-raised-button class="button bttn" type="button"  routerLink="/doc-display" routerLinkActive="active">View scedules</button>
+      </div>
+
+    </form>
+</div>
+</div>
+
+<div class="fl-r">
+  <img src="assets/Images/doc123.png" alt="Mountains" style="width:100%">
+  </div><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+

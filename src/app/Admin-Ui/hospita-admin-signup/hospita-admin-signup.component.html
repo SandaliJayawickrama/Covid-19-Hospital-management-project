@@ -1,0 +1,27 @@
+
+
+    <div class="center">
+        <h2>Hospital Admin Signup</h2>
+        
+        <form (submit)="onSignup(signupForm)" #signupForm="ngForm" *ngIf="!isLoading">
+            <div class="txt_field">
+                <input type="email" ngModel name="email" #emailInput="ngModel" email required >
+                <span *ngIf="emailInput.invalid">please enter valid email</span>
+                <label>Email</label>
+              </div>
+          <div class="txt_field">
+            <input type="password" ngModel name="password" #passwordInput="ngModel" password minlength="6" required>
+            <span *ngIf="passwordInput.invalid">minimum 6 charactors</span>
+            <label>Password</label>
+          </div>
+         
+          <input type="submit" value="Signup">
+         
+        </form>
+      </div>
+  
+   
+  
+      
+
+   

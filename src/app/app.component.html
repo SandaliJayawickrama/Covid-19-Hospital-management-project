@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Covid-19 Panademic</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+
+
+
+  </head>
+    <body>
+
+<section class="header1">
+  <nav>
+
+      <div class="title">
+      <a class="title" routerLink="/home" routerLinkActive="active">Stay-Safe Healthy At Home</a>
+      </div>
+      <div class="nav-links" id="navLinks">
+         <i class="fa fa-times" onclick="hideMenu()"></i>
+          <ul>
+              <!--<li><a routerLink="/home" routerLinkActive="active">HOME</a></li>-->
+              <li><a href="" routerLink="/labMain">LABS & PCR</a></li>
+              <li><a href=""routerLink="appointmenthomepage">DOCTOR APPOINTMENT</a></li>
+              <li><a href="" routerLink="/vaccinehome">Vaccination</a></li>
+              <li><a href="" routerLink="/pharmacyhome" routerLinkActive="active">PHARMACY</a></li>
+
+              <li><a href=""routerLink="/Qreservation">Quarantine Center</a></li>
+
+              <!--<li><a href="" routerLink="/appointmentadmin" routerLinkActive="active">APointTest</a></li>
+              <li><a href="" routerLink="/reservationadminside" routerLinkActive="active">VaccTest</a></li>-->
+              <!--<li><a href=""routerLink="/user-profile" routerLinkActive="active"USER PROFILe >USER PROFILE</a></li>-->
+
+
+
+
+
+          </ul>
+
+      </div>
+        <i class="fa fa-bars" onclick="showMenu()"></i>
+  </nav>
+
+  </section>
+
+   <router-outlet></router-outlet>
+
+
+   <br><br>
+
+   <section class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="flex2">
+              <div class="footer-col-1">
+                  <h3>Download our App</h3>
+                  <p>Download App for Android and IOS mobile phone</p>
+                  <div class="app-logo">
+                      <a href="#"><img src="/assets/Images/playstore.png"></a>
+                      <a href="#"> <img src="/assets/Images/appstore.png"></a>
+
+                  </div>
+            </div>
+            <div class="footer-col-2">
+                  <img src="/assets/Images/l.jpg">
+                  <p>Our purpose is to offer a better service for patients</p>
+            </div>
+            <div class="footer-col-3">
+                <h3>Useful Links</h3>
+                <ul>
+                    <li><a href="" routerLink="/home" routerLinkActive="active">HOME</a></li>
+
+                   <li><a href="" routerLink="/user-login" routerLinkActive="active">Hospital Admin</a></li>
+
+
+                  <!-- <li routerLink="/create">Track Admin</li>-->
+
+                </ul>
+            </div>
+
+              <div class="footer-col-4">
+                <h3>Follow Us </h3>
+                <ul>
+                    <li>Facebook</li>
+                    <li>Twitter</li>
+                    <li>Instagram</li>
+                    <li>YouTube</li>
+
+                </ul>
+            </div>
+            </div>
+            <hr>
+            <p class="copyright">Copyright 2021 - Stay Safe Healthy At Home</p>
+        </div>
+    </div>
+        </section>
+
+
+
+</body>
+</html>
+
+
+

@@ -1,0 +1,50 @@
+<mat-spinner *ngIf="isLoading"></mat-spinner>>
+<mat-card class="content" *ngIf="!isLoading">
+  <mat-card-title><b>Make an appoinment</b></mat-card-title><hr>
+
+    <mat-card class="contentSub"  *ngFor="let lab of labs" class="contentCardMain" >
+<form [formGroup]="form" (submit)="onBook( lab.Id,lab.Name)" *ngIf="!isLoading">
+
+      <mat-card class="contentCard" >
+
+        <h2>Laboratory:&nbsp;{{lab.Name}}</h2>
+
+        <h3>Location:&nbsp;{{lab.Address}}<mat-icon color="primary">add_location</mat-icon> </h3>
+
+    </mat-card><br>
+
+      <mat-form-field appearance="fill">
+        <mat-label >Choose a date</mat-label>
+        <input formControlName="input" [min]="minDate" #input [max]="maxDate" matInput  [matDatepicker]="picker">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker  #picker></mat-datepicker>
+        <mat-error *ngIf="form.get('input')?.invalid">Please select a date</mat-error>
+      </mat-form-field><br>
+      <mat-form-field>
+      <textarea
+      matInput
+      type="text"
+      formControlName="NIC"
+      minlength="12"
+      placeholder="Insert your NIC number"
+      #NIC
+      ></textarea><br>
+      <mat-error *ngIf="form.get('NIC')?.invalid">Please insert an NIC</mat-error>
+    </mat-form-field><br>
+    <mat-form-field>
+      <textarea
+      matInput
+      type="text"
+      formControlName="email"
+      minlength="3"
+      placeholder="Insert your email"
+      #NIC
+      ></textarea><br>
+      <mat-error *ngIf="form.get('email')?.invalid">Please insert a working email.</mat-error>
+    </mat-form-field><br>
+      <button mat-button
+      type="submit"
+      >Book</button>
+    </form>
+    </mat-card>
+</mat-card>

@@ -1,0 +1,25 @@
+<div class="heading">
+  <h1>
+  View Doctor Appointments
+  </h1>
+</div><div>
+<input type="text" name="aid" #aid placeholder="Enter Appointmen ID" >
+<button  class="delete"  type="button" (click)="onDelete(aid.value)" >Cancel Appointment</button></div><h4 style="color: brown;">*Note that this will cancel all apointments made by the entered ID<br> contact our staff to delete or update appointment details made on a specific day <a href="tel:+94112729729">+94112729729</a></h4><br><br>
+<input type="text" name="aid" #aid placeholder="Enter your email to check appointments" [(ngModel)]="searchText">
+<div>
+<!--<button  class="download"  (click)="downloaddetails()">Download table</button>-->
+
+
+<table id="customers">
+  <thead>
+
+    <th>Doctor</th>
+    <th>Date</th>
+  </thead>
+  <tr *ngFor="let Ares of appointmenService.appointment | filter:searchText">
+    <td>{{Ares.docname}}</td>
+    <td>{{Ares.email}}</td>
+    <td style="display:none;">{{Ares.name}}</td>
+</table>
+<br><br><br><br><br><br><br><br>
+</div>

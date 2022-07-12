@@ -1,0 +1,150 @@
+
+<div class="sidebar">
+  <div class="sidebar-brand">
+    <div class="brand-flex">
+      <img src="" width="30px" alt="">
+
+      <div class="brand-icons">
+        <span class="las la-bell"></span>
+        <span class="las la-user-circle"></span>
+
+        </div>
+      </div>
+    </div>
+    <div class="sidebar-main">
+        <div class="sidebar-user">
+          <img src="/assets/Images/dp1.png" alt="">
+          <div>
+              <h3>CHAMATH SENADEERA</h3>
+              <span>chamthsenadeera@gmail.com</span>
+            </div>
+      </div>
+
+      <div class="sidebar-menu">
+
+          <div class="menu-head">
+               <span>Manage</span>
+            </div>
+            <ul>
+              <li>
+                <a href="" routerLink="/dashboard" routerLinkActive="active">
+                     <span class="las la-window-maximize"></span>
+                     DASHBOARD
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/adminadd" routerLinkActive="active">
+                     <span class="las la-plus-circle"></span>
+                     ADD PHARMACIES
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/adminview" routerLinkActive="active">
+                     <span class="las la-eye"></span>
+                     VIEW PHARMACY BRANCHES
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/view" routerLinkActive="active">
+                     <span class="las la-flag-checkered"></span>
+                    CUSTOMER ORDERS
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/orderreport" routerLinkActive="active">
+                     <span class="las la-flag-checkered"></span>
+                     ORDER REPORT
+                </a>
+              </li>
+              <li>
+                <a href="" routerLink="/pharmacyUI" routerLinkActive="active">
+                     <span class="las la-sign-out-alt"></span>
+                     LOGOUT
+                </a>
+              </li>
+              </ul>
+
+        </div>
+
+      </div>
+  </div>
+
+  <div class="main-content">
+    <header>
+      <div class="menu-toggle">
+        <label for="">
+          <span class="las la-bars"></span>
+        </label>
+      </div>
+
+      <div>
+          <span class="las la-search"></span>
+          <span class="las la-bookmark"></span>
+          <span class="las la-sms"></span>
+        </div>
+      </header>
+
+      <main>
+        <div class="page-header">
+          <div>
+            <h1>Order Report</h1>
+
+            </div>
+
+
+          </div>
+
+          <section class="listpharmacy">
+            <div class="container">
+              <div class="search_box">
+                <div class="search_btn"><span class="las la-search"></span></div>
+                <input type="text" class="input_search" placeholder="SEARCH ORDER.." [(ngModel)]="searchText"/>
+              </div>
+
+              <br>
+              <br><br>
+
+              <table id="table">
+                <thead>
+                  <tr>
+                    <th>USER NAME</th>
+                    <th>DRUG ID</th>
+                    <th>NAME of PRODUCT</th>
+                    <th>TYPE</th>
+                    <th>QTY</th>
+
+
+                    </tr>
+                  </thead>
+                  <tr *ngFor="let cord of confirmorderService.confirmorders | filter:searchText">
+                    <td>{{cord.username}}</td>
+                    <td>{{cord.drugid}}</td>
+                    <td>{{cord.iname}}</td>
+                    <td>{{cord.itype}}</td>
+                    <td>{{cord.nitems}}</td>
+
+                    </tr>
+                </table>
+                <!--<button type="button" class="hero-btn1 red-btn" (click)="download()">DOWNLOAD PDF</button>-->
+                <!--<img (click)="download()" src="/assets/Images/pdf.png" style="height: 100px; width: 100px; cursor: pointer; margin-top: 20px;">-->
+                <br>
+                <button (click)="download()" type="button" class="button">
+                  <span class="button__text">DOWNALOD PDF</span>
+                  <span class="button__icon">
+                   <img src="/assets/Images/pdf.png" style="width: 30px; height: 30px;">
+
+                  </span>
+                </button>
+
+                </div>
+
+    </section>
+<br>
+
+
+
+
+
+        </main>
+    </div>
+<br><br><br><br>

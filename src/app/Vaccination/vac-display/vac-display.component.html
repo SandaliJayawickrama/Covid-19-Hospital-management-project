@@ -1,0 +1,59 @@
+<button class="Navbutton" routerLink="/hospital-admin" routerLinkActive="active">Hospital home</button>
+
+
+<div class="abc">
+  <div class="main-search-input-wrap">
+      <div class="main-search-input fl-wrap">
+          <div class="main-search-input-item">
+            <input type="text" class="searchTerm" name="serachDoc" placeholder="Search here.." [(ngModel)]="searchText">
+          </div>
+            <button type="submit" class="main-search-button">Search</button>
+      </div>
+  </div>
+  </div>
+
+
+
+<div class="topic">
+  <h2>Vaccination Schedule List</h2>
+</div>
+
+
+<div class="vsched_table">
+<table class="vacSched">
+
+  <tr>
+    <th> Schedule name</th>
+    <th> Vaccine name</th>
+    <th>Center name</th>
+    <th>  Dosage</th>
+    <th>Center Address</th>
+    <th> Date</th>
+    <th> Time</th>
+    <th>Capacity</th>
+    <th>Age cover</th>
+    <th> </th>
+  </tr>
+
+  <tr  *ngFor="let Vacschedule of Vschedule ">
+
+
+      <td> {{Vacschedule.vschedname}}</td>
+      <td>{{Vacschedule.vname}} </td>
+      <td> {{Vacschedule.centerN}}</td>
+      <td>{{Vacschedule.dosage}} </td>
+      <td> {{Vacschedule.centerA}}</td>
+      <td> {{Vacschedule.date}}</td>
+      <td> {{Vacschedule.time}}</td>
+      <td> {{Vacschedule.vcapacity}} </td>
+      <td>  {{Vacschedule.age}}</td>
+      <td> <button mat-raised-button class="button1 bttn" [routerLink]="['/vac-edit', Vacschedule.id]" >Edit</button>
+           <button mat-raised-button class="button1 bttn" (click)="onDelete(Vacschedule.id)">Delete</button> </td>
+    </tr>
+
+
+
+</table>
+</div>
+<div *ngIf="Vschedule.length > 0" ></div>
+<p *ngIf="Vschedule.length <= 0" >No schedules added yet</p>

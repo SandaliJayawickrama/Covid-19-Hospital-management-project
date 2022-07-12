@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+ <head>
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Covid-19 Panademic</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+  </head>
+    <body>
+      <br><br>
+       <section class="searchpharmacy">
+
+               <form>
+
+
+                 <h1>Find A<span> Branch</span> You Will<span> Want</span></h1>
+                 <div id="content">
+
+                 <div class="form-box">
+                       <input class="search-field skills" name="search" type="text" placeholder="Search Pharmacy Branch here" [(ngModel)]="searchText">
+
+                 </div>
+                 </div>
+               </form>
+
+
+       </section>
+       <br><br>
+
+       <section class="listpharmacy">
+               <div class="container">
+                 <h2>Available Pharmacy Branches</h2>
+                 <table>
+                   <thead>
+                     <tr>
+                       <th>PHARMACY NO</th>
+                       <th>NAME OF BRANCH</th>
+                       <th>LOCATION</th>
+                       <th>HOTLINE</th>
+                       <th></th>
+                       </tr>
+                     </thead>
+                     <tr *ngFor="let pn of pnameorderService.pnameorders | filter:searchText">
+                       <td>{{pn.pno}}</td>
+                       <td>{{pn.pname}}</td>
+                       <td>{{pn.location}}</td>
+                       <td>{{pn.cno}}</td>
+                       <td>
+                        <button (click)="navToSecondComp()" class="hero-btn1 red-btn">SELECT BRANCH</button>
+
+                      </td>
+                       </tr>
+                   </table>
+
+                   </div>
+
+       </section>
+ <br>
+
+
+
+
+
+
+</body>
+</html>
+
